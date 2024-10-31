@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+    <title>CodePyAI - Python</title>
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+      <div class="numero-leccion">
+            <h1 style="margin-left:0% ">Lección 2 : Sintaxis Basica de Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/SintaxisLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>2. Entrada y Salida de datos</h1>
+            <p>
+              Una de las tareas fundamentales en la programación es la manipulación de datos, un proceso  que abarca desde su procesamiento y análisis hasta la interacción con el usuario. En Python la entrada y salida de datos se destacan como operaciones comunes y esenciales. La capacidad de recibir información del usuario mediante la entrada de datos y de presentar resultados o información relevante mediante la salida de datos es fundamental en numerosos contextos de programación, desde la creación de simples scripts hasta el desarrollo de aplicaciones complejas. </p>
+              <br>
+
+              <iframe width="600" height="400" src="https://www.youtube.com/embed/NdRodOkTNew" frameborder="0" allowfullscreen></iframe>
+
+              <br><br><br>
+            <h1>2.1 Entrada de datos en Python</h1>
+            <p>La entrada de datos se refiere al proceso de recibir información desde una fuente externa, como el teclado, un archivo o una base de datos. En Python, la función principal para recibir entrada del usuario es input(). Esta función espera a que el usuario ingrese algún valor desde el teclado y devuelve una cadena de texto con la entrada proporcionada.
+            </p>
+            <br>
+            <div class="seccion-codigo">
+                <h3># Solicita al usuario que ingrese su nombre mediante el teclado y guarda el valor ingresado en la variable 'nombre'.</h3>
+                <p class="variables"> nombre = </p> <p class="funcion"> input </p> <p class="textocodigo">("Por favor, ingresa tu nombre: ")  </p>
+            </div>
+
+            <br><br>  <br>
+            <h1>2.2 Salida de datos en Python</h1>
+            <p>La salida de datos se refiere al proceso de mostrar información al usuario, ya sea en la consola, en un archivo o en cualquier otro medio. En Python, la función principal para mostrar salida es print(). Esta función toma uno o más argumentos y los imprime en la consola. Es una herramienta versátil que permite no solo imprimir texto, sino también variables, expresiones y resultados de operaciones, lo que facilita la comunicación de resultados y mensajes relevantes al usuario.
+            </p>
+            <br>
+            <div class="seccion-codigo">
+              <h3># Asigna el valor 25 a la variable 'edad' y luego imprime en la consola el mensaje.</h3> <br>
+              <p class="variables"> edad = </p> <p class="valores">15</p><br>
+              <p class="funcion" > print </p> <p class="textocodigo">("Tu edad es:"</p><p>, edad)</p>
+          </div>
+
+
+          <br><br>  <br>
+          <h1>2.3 Formateo en la salida</h1>
+          <p>
+            Python proporciona diversas formas de formatear la salida de datos para que se ajuste a nuestras necesidades, lo que resulta fundamental en la presentación de resultados claros y legibles para el usuario. Una de las formas más comunes y poderosas de realizar esta tarea es utilizando el método format() o las f-strings (cadenas f).</p>
+            <br>
+            <p>•  Usando f-strings</p>
+
+            <div class="seccion-codigo">
+              <h3># Asigna el valor 25 a la variable 'edad' y luego imprime en la consola el mensaje "Hola, Juan! Tienes 25 años."           </h3> <br>
+              <p class="variables"> nombre = </p> <p class="textocodigo">"Juan"</p><br>
+              <p class="variables"> edad = </p> <p class="valores">25</p><br>
+              <p class="funcion">print</p> <p class="textocodigo">(f"Hola, {nombre}! Tienes {edad} años.")</p><br>
+          </div>
+          <br>  <br>
+          <p>•  Usando el método .format()</p>
+          <div class="seccion-codigo">
+            <h3># Asigna el valor "María" a la variable 'nombre', el valor 25 a la variable 'edad', y luego imprime en la consola el mensaje "Hola, María! Tienes 25 años."</h3>
+            <p class="variables"> nombre = </p> <p class="textocodigo">"Maria"</p><br>
+            <p class="variables"> edad = </p> <p class="valores">50</p><br>
+            <p class="funcion">print</p> <p class="textocodigo">("Hola, { } ! Tienes { } años."</p><p>.</p><p class="funcion">format</p><p>(nombre, edad)</p><p class="textocodigo">)</p><br>
+        </div>
+        </div>
+
+
+      </section>
+
+
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+  </body>
+</html>

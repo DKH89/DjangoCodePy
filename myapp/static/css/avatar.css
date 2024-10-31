@@ -1,0 +1,259 @@
+body {
+    font-family: Studio-Feixen-Sans, Arial ;
+    overflow-x: hidden;
+    background-image: url('../imagenes/Fondo16.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0 ;
+}
+
+header {
+  
+    position: fixed;  
+    top: 0;
+    left: 0 ;
+    width: 100%;    
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    background-color: #000000;
+    padding: 30px 20px;
+    z-index: 10;
+}
+
+
+header .logo {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition: 1.5s;
+    text-decoration: none;
+}
+
+
+header.abajo{
+    background:#0e0048 ;
+    padding: 15px 20px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header ul {
+
+    position: relative;
+    display: flex ;
+    justify-content: center;
+    align-items: center ;
+
+}
+
+header ul li {
+    list-style: none;
+    color: white;
+}
+
+header ul li .boton {
+    border: 2px solid #9ba3ab;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px; 
+}
+
+.boton:hover {
+    border: 2px solid #03ef62;
+}
+
+
+header ul li a {
+    position: relative;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.7s;
+}
+
+
+header ul li a:hover {
+    background-color: #213147    ;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.MenuAvatares{
+    padding: 2%;
+    width: 60%; 
+    height: auto;
+    margin: auto; 
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.87), rgba(48, 48, 48, 0.87), rgba(0, 0, 0, 0.87));
+    border-radius: 5%;
+    display: grid;
+    margin-top: 10%;
+}
+
+.AvatarPrincipal{
+    padding: 1%;
+}
+
+.MenuAvatares .AvatarPrincipal img{
+    margin: 0 auto; 
+    display: block; 
+    width: 350px;
+    height: 350px;
+    border-radius: 60%;
+    text-align: center;
+    opacity: 1;
+}
+
+.MenuAvatares img{
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 10%;
+    border-radius: 60%;
+    opacity: 0.5;
+}
+
+.MenuAvatares img:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.MenuAvatares h1{
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.footer {
+    background-color: #000000;
+    padding: 20px 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: -100px;
+    padding-top: 50px;
+    width: 100%;
+    margin-top: 6%;
+}
+
+.footer-row{
+    display: flex;
+    margin-left: 150px;
+}
+
+.footer-links{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+
+.footer-links p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    float: left;
+    margin-left: 300px;
+}
+
+
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #BBBBBB;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 6px;
+}
+
+.social-link a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    margin-right: 10px; 
+}
+
+.social-link a:last-child {
+    margin-right: 0; 
+}
+.social-link a:hover {
+
+    background-color: #00C3FF;
+}
+
+.MenuAvatares a{
+    background-color: rgb(127, 1, 196);
+    width: 30%;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.MenuAvatares p{
+    text-align: center;
+    margin-bottom: 3%;
+    cursor: pointer;
+    margin-top: 3%;
+}
+
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: -1;
+    margin-top: 1.7%;
+    margin-left: 0.5%;
+}
+.menu-desplegable a {
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+}
+.menu-desplegable a:hover {
+    background-color: #f1f1f1;
+}
+.menu-boton:hover .menu-desplegable {
+    display: block;
+}

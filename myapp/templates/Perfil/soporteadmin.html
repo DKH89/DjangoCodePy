@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/soporteper.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfiladmin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/soporteadmin.css' %}">
+
+
+
+</head>
+<body>
+
+
+    {% if usuario.id_usuario is none%}
+    <script>
+        alert("Por favor, inicie sesión para acceder a más características de la página web.");
+        window.location.href = "http://127.0.0.1:8000/Login/"
+    </script>
+    {% endif %}
+
+
+    <div class="menu">
+        <div class="user-profile">
+           <h2 class="NomUsuario" style="color: white;">{{ usuario.nombre_usuario }}</h2><br>
+           <img src="../static/imagenes/Administrador.png" alt="Imagen de perfil" onclick="window.location.href='http://127.0.0.1:8000/'" style="cursor:pointer"> <br><br><br>
+
+           </a>
+            <hr><br>
+        </div>
+        
+        <ul class="menu-list">
+            <li>
+                <img src="../static/imagenes/usuario.png" alt="Opción 1">
+                <a href="http://127.0.0.1:8000/PerfilAdmin/">Usuarios</a>
+            </li>
+
+            <li>
+                <img src="../static/imagenes/Soporte.png"   alt="Opción 1">
+                <a href="http://127.0.0.1:8000/SoporteAdmin/">Soporte</a>
+            </li>
+       
+         
+        </ul>
+ 
+    </div>
+
+    <h1 class="titulos" style="margin-top:7%">Reportes realizados por los usuarios</h1>
+
+
+        
+    <table style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">ID Soporte</th>
+                <th style="border: 1px solid black; padding: 8px;">Descripción</th>
+                <th style="border: 1px solid black; padding: 8px;">Fecha</th>
+                <th style="border: 1px solid black; padding: 8px;">Estado</th>
+                <th style="border: 1px solid black; padding: 8px;">Comentario</th>
+                <th style="border: 1px solid black; padding: 8px;">Usuario ID</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for soportes in soportes %}
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{{ soportes.id }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ soportes.descripcion_reporte}}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ soportes.fecha_reporte }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ soportes.estado_reporte}}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ soportes.comentario_soporte}}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ soportes.usuario_id}}</td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+
+
+
+    <h1 class="titulos" style="margin-top:7%;margin-left:27%">Formulario de Soporte Técnico</h1>
+
+ 
+    <div class="contenedorkey">
+        <div class="contenedor-principal">
+            <div class="contenedor-1">
+                <div class="contenidop" style="width:400px">
+                <h2 class="items">Informe de errores en la pagina web</h2>
+                <p>Por favor, proporciona una descripción detallada del error que estás experimentando y selecciona la categoría que mejor se ajuste a la naturaleza del problema. 
+                    Tu aportación es fundamental para que podamos brindarte una solución efectiva y mejorar la experiencia de nuestra pagina web</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+
+                <div clas="contenidod" style="margin-left:-4%;margin-top:5%">
+                    <br>
+                <h2 class="items">Editar Datos Personales</h2> <br> <br>
+
+                <form onsubmit="return enviarFormulario(event)" method="POST">
+                    <div class="input-group">
+                        <div class="input-item">
+                            <br>
+                            <p>Id del reporte</p> <br>
+                            <select class="categoria" name="idreporte" id="idreporte" required>
+                                {% for soporte in soportes %}
+                                    <option value="{{ soporte.id }}">{{ soporte.id }}</option>
+                                {% endfor %}
+                            </select>
+                            
+                            <br><br>                  
+              
+                        
+                            <p>Estado del Reporte</p> <br>
+
+                            <select class="categoria" name="estadoreporte" id="estadoreporte" required  >
+                                <option value="Finalizado">Finalizado</option>
+                                <option value="En estudio">En estudio</option>
+                                <option value="No aceptado">No aceptado</option>
+                            </select><br><br>
+
+                        </select>
+
+                        <p>Comentario del reporte</p> <br>
+                        <textarea class="descripcion" name="comentarioreporte" id="comentarioreporte" rows="8" cols="50" required></textarea><br><br>
+                     
+                        </div>
+
+            
+                    </div>
+                    <br>
+                    <button type="submit">Guardar Cambios</button>
+                    {% csrf_token %}
+                </form>
+
+                </div>
+            </div>
+        </div>
+
+            
+           
+
+
+
+
+
+        <br><br> <br><br> <br><br>
+
+
+
+
+    
+</body>
+
+<script>
+    if (window.location.href !== "http://127.0.0.1:8000/SoporteAdmin/") {
+        window.location.href = "http://127.0.0.1:8000/SoporteAdmin/";
+    }
+</script>
+
+<script>
+    function enviarFormulario(event){
+        event.preventDefault();
+
+
+        var idreporte = document.getElementById("idreporte").value;
+        var estadoreporte = document.getElementById("estadoreporte").value;
+        var comentarioreporte = document.getElementById("comentarioreporte").value;
+
+
+        if (comentarioreporte.trim() !== "") {
+            alert("Reporte respondido con exito")
+            window.location.href = "http://127.0.0.1:8000/ActualizarEstadoReporte/" + encodeURIComponent(idreporte) +"/"+ encodeURIComponent(estadoreporte) + "/" +encodeURIComponent(comentarioreporte) ;
+
+        } else {
+            alert("El campo de comentarios no puede estar vacio");
+        }
+    }
+
+</script>
+
+
+
+
+
+
+</html>

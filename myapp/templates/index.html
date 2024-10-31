@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePyAI</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index2.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  
+    {% include 'Contenido/menu.html' %}
+
+    <section class="presentacion-1">
+        <div class="contenedor">
+            <h1>Aprenda a Programar Facilmente</h1>
+            <p>Comience su viaje en programación con nuestro curso de Python. Aprenda los conceptos básicos de este poderoso lenguaje y empiece a crear sus propios programas en poco tiempo.</p>
+        </p>
+            <br>
+            <img src="../static/imagenes/video.gif" alt="GIF Animado">
+            <a href="http://127.0.0.1:8000/Nosotros/" class="botones">Descubra Más</a> 
+            <a href="http://127.0.0.1:8000/Login/" class="botones" style="margin-left:32%">Unete Ahora</a>
+        </div>
+    </section>
+
+
+    <section class="presentacion-2">
+        <div class="contenedor-2">
+            <h1>Impacta en todo el ciclo de tus colaboradores con nuestra plataforma            </h1>
+            <p>Descubra todo lo que tenemos para ofrecer y encuentre la información que necesita para empezar su viaje en programación con nuestro curso de Python
+            <img src="./static/imagenes/Imagen4.png" alt="GIF Animado">
+            </p>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <p>Acceda a nuestra IA de apoyo</p>
+                        <span style="color:white;font-size:30px">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Respuestas rápidas y precisas sobre programación en Python.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <p>Explore recursos educativos variados</p>
+                        <span style="color:white;font-size:30px">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Tutoriales, ejercicios prácticos y artículos informativos.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <p>Experiencia de usuario intuitiva</p>
+                        <span style="color:white;font-size:30px">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Diseño centrado en la usabilidad y estética moderna.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <p>Recursos interactivos</p>
+                        <span style="color:white;font-size:30px">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Herramientas que mejoran su aprendizaje y rendimiento en programación.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <a href="http://127.0.0.1:8000/Nosotros/" class="botonesa">Encuentra más información aqui</a> 
+
+
+        </div>
+
+    </section>
+
+  <section class="presentacion-3">
+        <video class="video-fondo" autoplay muted loop>
+            <source src="../static/imagenes/FondoPrueba3.mp4" type="video/mp4">
+        </video>
+        
+        <div class="contenedor-3">
+            <h1>Comience su camino en la programación</h1>    
+            <br><br>
+            <p>Explore tutoriales, ejercicios prácticos y recursos educativos para aprender Python y comenzar a programar</p>
+            <br>
+            <a href="http://127.0.0.1:8000/CursoPython/" class="botones-c">Empiece a Estudiar</a> 
+        </div>
+    </section>
+
+    <script>
+        function toggleAccordion(element) {
+     const content = element.nextElementSibling;
+     const isCurrentlyOpen = content.style.display === 'block';
+     const allContents = document.querySelectorAll('.accordion-content');
+     const allHeaders = document.querySelectorAll('.accordion-header span');
+     
+     allContents.forEach(item => item.style.display = 'none');
+     allHeaders.forEach(span => span.textContent = '+');
+     
+     if (!isCurrentlyOpen) {
+         content.style.display = 'block';
+         element.querySelector('span').textContent = '-';
+     }
+ }
+ 
+     </script>
+ 
+        {% include 'Contenido/footer.html' %}
+
+    
+</body>
+</html>

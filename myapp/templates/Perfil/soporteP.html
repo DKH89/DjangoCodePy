@@ -1,0 +1,187 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/soporteper.css' %}">
+
+</head>
+<body>
+
+
+
+    {% if usuario.id_usuario is none%}
+    <script>
+        alert("Por favor, inicie sesión para acceder a más características de la página web.");
+        window.location.href = "http://127.0.0.1:8000/Login/"
+    </script>
+    {% endif %}
+
+
+    <div class="menu">
+        <div class="user-profile">
+           <h2 class="NomUsuario" style="color: white;">{{ usuario.nombre_usuario }}</h2><br>
+           <img src="../static/imagenes/Avatar/{{ infousuario.avatar_usuario }}.jpg" alt="Imagen de perfil" onclick="window.location.href='http://127.0.0.1:8000/'" style="cursor:pointer"> <br><br><br>
+            <hr><br>
+        </div>
+        
+        <ul class="menu-list">
+            <li>
+                <img src="../static/imagenes/usuario.png" alt="Opción 1">
+                <a href="http://127.0.0.1:8000/Perfil/">Perfil</a>
+            </li>
+
+            <li>
+                <img src="../static/imagenes/Certificado.png"   alt="Opción 1">
+                <a href="http://127.0.0.1:8000/Perfil/Progreso">Certificado</a>
+            </li>
+            <li>
+                <img src="../static/imagenes/Avatar.png"  alt="Opción 1">
+                <a href="/AvatarLog" style="margin-left:-10x;">Avatar</a>
+            </li>
+            <li>
+                <img src="../static/imagenes/Soporte.png"  alt="Opción 1">
+                <a href="http://127.0.0.1:8000/Perfil/Soporte" style="margin-left:-10x;">Soporte</a>
+            </li>
+
+            <br>
+         
+        </ul>
+ 
+    </div>
+
+    <h1 class="titulos" style="margin-top:7%;margin-left:27%">Formulario de Soporte Técnico</h1>
+
+    <div class="contenedorkey">
+        <div class="contenedor-principal">
+            <div class="contenedor-1">
+                <div class="contenidop" style="width:400px">
+                <h2 class="items">Informe de errores en la pagina web</h2>
+                <p>Por favor, proporciona una descripción detallada del error que estás experimentando y selecciona la categoría que mejor se ajuste a la naturaleza del problema. 
+                    Tu aportación es fundamental para que podamos brindarte una solución efectiva y mejorar la experiencia de nuestra pagina web</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+
+                <div clas="contenidod" style="margin-left:-4%;margin-top:5%">
+                <h2 class="items">Editar Datos Personales</h2> <br> <br>
+
+                <form onsubmit="return enviarFormulario(event)" method="POST">
+                    <div class="input-group">
+                        <div class="input-item">
+                            <br>
+                            <p>Nombre de usuario</p> <br>
+                            <input type="textG" id="nombreusuario" name="nombreusuario" placeholder="Tu nuevo nombre de usuario" value="{{usuario.nombre_usuario}}">
+                     
+                            <br><br>
+                            <p>Correo electronico</p> <br> 
+                            <input type="textG" id="correousuario" name="nombreusuario" placeholder="Tu nuevo nombre de usuario" value="{{usuario.correo_usuario}}">
+
+
+                            <br><br>
+                            <p>Categoria de error</p> <br>
+
+                            <select class="categoria" name="categoriasoporte" id="categoriasoporte" required  >
+                                <option value="Bugs">La pagina no carga correctamente.</option>
+                                <option value="Errores">Errores de la IA</option>
+                                <option value="Reembolsos">Quejas y/o reclamos</option>
+                                <option value="Solicitudes">Solicitudes</option>
+                                <option value="Otro">Otro</option>
+                            </select><br><br>
+
+
+                        </select>
+
+                        <p>Descripción del problema</p> <br>
+                        <textarea class="descripcion" name="descripcionsoporte" id="descripcionsoporte" rows="8" cols="50" required></textarea><br><br>
+                     
+                        </div>
+
+            
+                    </div>
+                    <br>
+                    <button type="submit">Guardar Cambios</button>
+                    {% csrf_token %}
+                </form>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <h1 class="titulos" style="margin-top:7%;margin-left:39%">Reportes realizados</h1> <br><br>
+       
+
+
+        <table style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px;">Categoría</th>
+                    <th style="border: 1px solid black; padding: 8px;">Descripción</th>
+                    <th style="border: 1px solid black; padding: 8px;">Fecha</th>
+                    <th style="border: 1px solid black; padding: 8px;">Estado</th>
+                    <th style="border: 1px solid black; padding: 8px;">Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for soporte in soportes %}
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">{{ soporte.categoria_reporte }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ soporte.descripcion_reporte }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ soporte.fecha_reporte }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ soporte.estado_reporte }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ soporte.comentario_soporte }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+        <br><br>
+
+        <h1 style="visibility:hidden"><a href="" class="idUsuario">{{usuario.id_usuario}}</a></h1>
+
+</body>
+
+<script>
+    if (window.location.href !== "http://127.0.0.1:8000/Perfil/Soporte") {
+        window.location.href = "http://127.0.0.1:8000/Perfil/Soporte";
+    }
+
+    function enviarFormulario(event) {
+        event.preventDefault();
+
+        var categoriasoporte = document.getElementById("categoriasoporte").value;
+        var descripcionsoporte = document.getElementById("descripcionsoporte").value;
+        var fecha = new Date().toISOString().slice(0, 19).replace('T', ' '); 
+        var estado = "Enviado";
+        var idUsuario = "{{ usuario.id_usuario }}";
+        var comentario = "En revisión";
+
+        if (descripcionsoporte.trim() !== "") {
+            alert("Se ha enviado correctamente el formulario de soporte técnico.");
+            window.location.href = "http://127.0.0.1:8000/EnviarSoporte/" + 
+                encodeURIComponent(categoriasoporte) + "/" + 
+                encodeURIComponent(descripcionsoporte) + "/" + 
+                encodeURIComponent(fecha) + "/" + 
+                encodeURIComponent(estado) + "/" + 
+                encodeURIComponent(idUsuario) + "/" + 
+                encodeURIComponent(comentario);
+        } else {
+            alert("El campo de descripción no puede estar vacío.");
+        }
+    }
+</script>
+
+
+
+
+</html>

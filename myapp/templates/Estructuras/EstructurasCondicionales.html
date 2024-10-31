@@ -1,0 +1,176 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+  <title>CodePyAI - Python</title>
+</head>
+
+  <body>
+
+    {% include 'Contenido/menuCurso.html' %}
+
+      <div class="numero-leccion">
+            <h1 style="margin-left:2%">Lección 3 : Estructuras de control en Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/EngranajeLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>5.Estructuras Condicionales</h1>
+           
+            <p>Las estructuras condicionales son elementos fundamentales en programación que permiten controlar el flujo de ejecución del código basándose en condiciones específicas. En Python, estas estructuras se definen principalmente con las palabras clave if, elif (opcional) y else. Con estas herramientas, puedes crear programas dinámicos y adaptativos que respondan de manera inteligente a diferentes situaciones, ejecutando diferentes bloques de código según se cumplan o no ciertas condiciones establecidas.
+
+              <br>  <br>  <br>
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/rY_HuBtUSVk" frameborder="0" allowfullscreen></iframe>
+            <br><br>
+
+
+
+            <h1>5.1 If Statement</h1>
+
+
+            <p>El bloque if es una estructura fundamental en programación que se utiliza para ejecutar un conjunto de instrucciones si una condición dada es verdadera. En Python, este bloque se define con la palabra clave if, seguida de la condición que se evaluará. Si la condición es verdadera, el bloque de código indentado dentro del if se ejecutará; de lo contrario, se omitirá. Esta capacidad de tomar decisiones basadas en condiciones específicas es esencial para la creación de programas que se adapten y respondan de manera inteligente a diferentes situaciones. </p>
+
+            <p>La sintaxis básica de un bloque if en Python es la siguiente:</p>
+
+            <div class="seccion-codigo">
+              </h3> <br>
+              <p class="tipobooleano"> if </p> <p>condición:</p><br>
+              <h3 style="margin-top: -2%;">&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código que se ejecuta si la condición es verdadera</h3>
+  
+          </div>
+
+          <br><br>
+          <p>Ejemplo de Aplicación:</p>
+
+            <div class="seccion-codigo">
+              </h3> <br>
+
+              <h3># Verificar si un número es positivo</h3>
+
+              <p class="variables"> numero = </p> <p class="valores">10</p> <br>
+
+              <p class="tipobooleano"> if </p> <p>numero ></p><p class="valores">0</p><p>:</p><br>
+
+              &nbsp;&nbsp;&nbsp;&nbsp<p class="funcion" > print </p> <p class="textocodigo">("El número es positivo")</p>
+
+        </div>
+
+        <br><br>
+        <h1>5.2 Else Statement</h1>
+        <p>El bloque else es una estructura complementaria al bloque if en programación, que se utiliza para ejecutar un conjunto de instrucciones si ninguna de las condiciones anteriores evaluadas con if o elif es verdadera. En Python, el bloque else se define después de todos los bloques if y elif, y su código se ejecutará únicamente si ninguna de las condiciones anteriores se cumple. </p>
+
+        <p>La sintaxis básica de un bloque else en Python es la siguiente:</p>
+        <div class="seccion-codigo">
+        </h3> <br>
+
+        <p class="tipobooleano"> if </p> <p>condición:</p><br>
+        <h3 style="margin-top: -2%;">&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código que se ejecuta si la condición es verdadera</h3>
+
+        <p class="tipobooleano"> else </p> <p>:</p><br>
+        <h3 style="margin-top: -2%;">&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código que se ejecuta si ninguna de las condiciones anteriores es verdadera
+        </h3>
+
+        </div>
+        <br><br>
+        <p>Ejemplo de Aplicación:</p>
+
+        <div class="seccion-codigo">
+        
+          <h3># Comprueba si el número es divisible por 2 (es decir, si el residuo de la división por 2 es igual a 0).       </h3> <br>
+    
+        <p class="tipobooleano"> if </p> <p>numero % </p>&nbsp<p class="valores">2</p>&nbsp<p> == </p><p class="valores">0</p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp<p class="funcion" style= > print </p> <p class="textocodigo">("El número es par")</p> <br>
+
+
+        <p class="tipobooleano"> else </p> <p>:</p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp<p class="funcion" style= > print </p> <p class="textocodigo">("El número es impar")</p>
+        </h3>
+
+        </div>
+        <br><br>
+        <h1>5.3 Elif Statement</h1>
+        <p>El bloque elif es una estructura condicional adicional que se utiliza en Python para comprobar múltiples condiciones después de evaluar la condición en el bloque if. Si la condición en el bloque if resulta ser falsa, se evalúa la condición en el bloque elif. Esto permite crear una lógica más compleja y detallada en la toma de decisiones en un programa. Si la condición en el bloque elif es verdadera, se ejecuta el bloque de código asociado a ese elif.</p>
+
+
+        <p>La sintaxis básica de un bloque elif en Python es la siguiente:</p>
+
+        <div class="seccion-codigo">
+        </h3> <br>
+
+        <p class="tipobooleano"> if </p> <p>condición 1:</p><br>
+        <br>
+        <h3 style="margin-top: -2%;">&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código que se ejecuta si la condición es verdadera</h3>
+        <br>
+        <p class="tipobooleano"> elif </p> <p>condición 2:</p><br>
+        <br>
+        <h3 style="margin-top: -2%;">&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código que se ejecuta si ninguna de las condiciones anteriores es verdadera
+        </h3>
+
+        </div>
+        <br><br>
+
+        <p>Ejemplo de Aplicación:</p>
+        <div class="seccion-codigo">
+          <h3># Comprueba el valor de x y muestra un mensaje según su valor.</h3><br>
+          
+
+
+
+          <p class="tipobooleano">if</p>
+          <p>numero &gt;</p>&nbsp;<p class="valores">10</p><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print</p>&nbsp;<p class="textocodigo">("x es mayor que 10")</p><br>
+      
+          <p class="tipobooleano">elif</p>
+          <p>numero ==</p>&nbsp;<p class="valores">10</p><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print</p>&nbsp;<p class="textocodigo">("x es igual a 10")</p><br>
+      
+          <p class="tipobooleano">else</p><p>:</p><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print</p>&nbsp;<p class="textocodigo">("x es menor que 10")</p><br>
+      </div>
+      
+      </section>
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+
+
+
+
+
+  </body>
+</html>

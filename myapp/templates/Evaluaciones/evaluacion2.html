@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+   
+    {% if infousuario.progreso_curso < 35 %}
+    <script>
+        alert("Debe aprobar la primera evaluación para continuar con la siguiente");
+        window.location.href = "http://127.0.0.1:8000/Evaluacion1/";
+    </script>
+{% endif %}
+
+
+
+
+      <div class="numero-leccion">
+        <h1 style="margin-top:2.5%">Evaluacion 2 : Fundamentos Basicos (50%)<h1>
+              <div class="imagen-izq">
+                <img src="../static/imagenes/LogoArchivos.png" style="margin-left:17%;width:7%;margin-top:-105px"/>
+              </div>
+      </div>
+
+
+      <section class="Lecciones">
+
+        <h1>2. Acerca del formulario (Nota: {{ infousuario.progreso_curso }} %
+          {% if infousuario.progreso_curso >= 50 %}
+              - Nota final: Aprobado
+          {% elif infousuario.progreso_curso >= 35 %}
+              - Nota parcial (Primera evaluacion)
+          {% else %}
+              - Desaprobado
+          {% endif %}
+      )</h1>
+             
+        <p>Este formulario es una evaluación de conocimientos sobre Python, diseñada para medir la comprensión de conceptos fundamentales como la programación orientada a objetos (clases, objetos, métodos, herencia, polimorfismo, encapsulamiento) y operadores (asignación, aritméticos, lógicos, relacionales). Cada pregunta presenta varias opciones de respuesta, de las cuales solo una es correcta. Para responder, selecciona la opción que consideres correcta para cada pregunta y, al finalizar, presiona el botón "Calificar" para obtener tu puntuación. La calificación se mostrará en una escala de 100%, evaluando tu rendimiento en esta evaluación de Python.</p>
+        
+        <div class="contenedor">
+          <form id="quizForm">
+            <div class="question">
+                <p>1. ¿Qué es una clase en Python?</p>
+                <label><input type="radio" name="q1" value="a"> Una instancia de un objeto</label><br>
+                <label><input type="radio" name="q1" value="b"> Un tipo de dato numérico</label><br>
+                <label><input type="radio" name="q1" value="c"> Un tipo de dato compuesto que define atributos y métodos</label>
+            </div>
+            <div class="question">
+                <p>2. ¿Cómo se crea un objeto en Python?</p>
+                <label><input type="radio" name="q2" value="a"> Con la palabra clave 'object'</label><br>
+                <label><input type="radio" name="q2" value="b"> Usando la función 'create_object()'</label><br>
+                <label><input type="radio" name="q2" value="c"> Instanciando una clase</label>
+            </div>
+            <div class="question">
+                <p>3. ¿Qué es el encapsulamiento en Python?</p>
+                <label><input type="radio" name="q3" value="a"> Ocultar datos dentro de un método</label><br>
+                <label><input type="radio" name="q3" value="b"> Combinar múltiples objetos en uno</label><br>
+                <label><input type="radio" name="q3" value="c"> Realizar operaciones matemáticas en objetos</label>
+            </div>
+            <div class="question">
+                <p>4. ¿Qué permite el polimorfismo en Python?</p>
+                <label><input type="radio" name="q4" value="a"> Utilizar diferentes operadores en una expresión</label><br>
+                <label><input type="radio" name="q4" value="b"> Redefinir métodos en clases derivadas</label><br>
+                <label><input type="radio" name="q4" value="c"> Trabajar con múltiples tipos de datos a través de una interfaz común</label>
+            </div>
+            <div class="question">
+                <p>5. ¿Cómo se realiza la herencia en Python?</p>
+                <label><input type="radio" name="q5" value="a"> Mediante la palabra clave 'inherits'</label><br>
+                <label><input type="radio" name="q5" value="b"> Con la función 'extend()'</label><br>
+                <label><input type="radio" name="q5" value="c"> Usando la palabra clave 'class' y especificando la clase base</label>
+            </div>
+            <div class="question">
+                <p>6. ¿Cuál es la forma correcta de definir un método en Python?</p>
+                <label><input type="radio" name="q6" value="a"> method myMethod():</label><br>
+                <label><input type="radio" name="q6" value="b"> def myMethod():</label><br>
+                <label><input type="radio" name="q6" value="c"> function myMethod():</label>
+            </div>
+            <div class="question">
+                <p>7. ¿Cuál es el operador de asignación en Python?</p>
+                <label><input type="radio" name="q7" value="a"> =</label><br>
+                <label><input type="radio" name="q7" value="b"> ==</label><br>
+                <label><input type="radio" name="q7" value="c"> +=</label>
+            </div>
+            <div class="question">
+                <p>8. ¿Cuál es un operador aritmético en Python?</p>
+                <label><input type="radio" name="q8" value="a"> &&</label><br>
+                <label><input type="radio" name="q8" value="b"> %</label><br>
+                <label><input type="radio" name="q8" value="c"> ||</label>
+            </div>
+            <div class="question">
+                <p>9. ¿Cuál es un operador lógico en Python?</p>
+                <label><input type="radio" name="q9" value="a"> **</label><br>
+                <label><input type="radio" name="q9" value="b"> &</label><br>
+                <label><input type="radio" name="q9" value="c"> and</label>
+            </div>
+            <div class="question">
+                <p>10. ¿Qué operador se utiliza para verificar si dos valores son iguales en Python?</p>
+                <label><input type="radio" name="q10" value="a"> =</label><br>
+                <label><input type="radio" name="q10" value="b"> ==</label><br>
+                <label><input type="radio" name="q10" value="c"> ===</label>
+            </div>
+            
+            <button type="button" onclick="gradeQuiz()">Calificar</button>
+        </form>
+        
+          <div id="result"></div>
+      </div>
+      </section>
+
+
+      <script>
+        function gradeQuiz() {
+          const correctAnswers = {
+            q1: "c", 
+            q2: "c", 
+            q3: "a", 
+            q4: "b", 
+            q5: "c", 
+            q6: "b", 
+            q7: "a", 
+            q8: "b",
+            q9: "c",
+            q10: "b" 
+        };
+      
+          let score = 0;
+          const form = document.getElementById("quizForm");
+          const formData = new FormData(form);
+      
+          for (let [question, answer] of formData.entries()) {
+              if (answer === correctAnswers[question]) {
+                  score += 10;
+              }
+          }
+      
+          document.getElementById("result").innerText = `Tu puntuación es: ${score}%`;
+          alert(`Tu puntuación es: ${score}%`);
+
+          window.location.href = "http://127.0.0.1:8000/actualizarNota2/"+score;
+
+      }
+      </script>
+
+      <script>
+        var currentUrl = window.location.href;
+        if (currentUrl != "http://127.0.0.1:8000/Evaluacion2/") {
+            window.location.href = "http://127.0.0.1:8000/Evaluacion2/";
+        }
+    </script>
+    
+
+
+    </div>
+  </body>
+</html>

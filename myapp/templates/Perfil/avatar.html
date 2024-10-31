@@ -1,0 +1,190 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/avatar.css' %}">
+
+</head>
+<body>
+
+    {% include 'Contenido/menu.html' %}
+
+
+    <div class="MenuAvatares">
+
+        <h1>Seleccione algun avatar para continuar</h1>
+
+
+        <div class="AvatarPrincipal">
+            <img id="avatarPrincipalImg" src="../static/imagenes/Avatar/Avatar1.jpg" alt="AvatarPrincipal">
+        </div>
+
+        <p><a onclick="confirmarAvatar()">Confirmar</a></p>
+        <div>
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar1.jpg" alt="Avatar1" >
+            <input type="radio" name="nuevo_avatar" value="Avatar1" src="../static/imagenes/Avatar/Avatar1.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar2.jpg" alt="Avatar2">
+            <input type="radio" name="nuevo_avatar" value="Avatar2" src="../static/imagenes/Avatar/Avatar2.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar3.jpg" alt="Avatar3">
+            <input type="radio" name="nuevo_avatar" value="Avatar3" src="../static/imagenes/Avatar/Avatar3.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar4.jpg" alt="Avatar4">
+            <input type="radio" name="nuevo_avatar" value="Avatar4" src="../static/imagenes/Avatar/Avatar4.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar5.jpg" alt="Avatar5">
+            <input type="radio" name="nuevo_avatar" value="Avatar5" src="../static/imagenes/Avatar/Avatar5.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar6.jpg" alt="Avatar6">
+            <input type="radio" name="nuevo_avatar" value="Avatar6" src="../static/imagenes/Avatar/Avatar6.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar7.jpg" alt="Avatar7">
+            <input type="radio" name="nuevo_avatar" value="Avatar7" src="../static/imagenes/Avatar/Avatar7.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar8.jpg" alt="Avatar8">
+            <input type="radio" name="nuevo_avatar" value="Avatar8" src="../static/imagenes/Avatar/Avatar8.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar9.jpg" alt="Avatar9">
+            <input type="radio" name="nuevo_avatar" value="Avatar9" src="../static/imagenes/Avatar/Avatar9.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar10.jpg" alt="Avatar10">
+            <input type="radio" name="nuevo_avatar" value="Avatar10" src="../static/imagenes/Avatar/Avatar10.jpg"  onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar11.jpg" alt="Avatar11">
+            <input type="radio" name="nuevo_avatar" value="Avatar11" src="../static/imagenes/Avatar/Avatar11.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar12.jpg" alt="Avatar12">
+            <input type="radio" name="nuevo_avatar" value="Avatar12" src="../static/imagenes/Avatar/Avatar12.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar13.jpg" alt="Avatar13">
+            <input type="radio" name="nuevo_avatar" value="Avatar13" src="../static/imagenes/Avatar/Avatar13.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar14.jpg" alt="Avatar14">
+            <input type="radio" name="nuevo_avatar" value="Avatar14" src="../static/imagenes/Avatar/Avatar14.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar15.jpg" alt="Avatar15">
+            <input type="radio" name="nuevo_avatar" value="Avatar15" src="../static/imagenes/Avatar/Avatar15.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar16.jpg" alt="Avatar16">
+            <input type="radio" name="nuevo_avatar" value="Avatar16" src="../static/imagenes/Avatar/Avatar16.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar17.jpg" alt="Avatar17">
+            <input type="radio" name="nuevo_avatar" value="Avatar17" src="../static/imagenes/Avatar/Avatar17.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar18.jpg" alt="Avatar18">
+            <input type="radio" name="nuevo_avatar" value="Avatar18" src="../static/imagenes/Avatar/Avatar18.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar19.jpg" alt="Avatar19">
+            <input type="radio" name="nuevo_avatar" value="Avatar19" src="../static/imagenes/Avatar/Avatar19.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar20.jpg" alt="Avatar20">
+            <input type="radio" name="nuevo_avatar" value="Avatar20" src="../static/imagenes/Avatar/Avatar20.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar21.jpg" alt="Avatar21">
+            <input type="radio" name="nuevo_avatar" value="Avatar21" src="../static/imagenes/Avatar/Avatar21.jpg" onchange="actualizarAvatar(this)">
+            </label>
+
+            <label>
+            <img src="../static/imagenes/Avatar/Avatar22.jpg" alt="Avatar22">
+            <input type="radio" name="nuevo_avatar" value="Avatar22"  src="../static/imagenes/Avatar/Avatar22.jpg" onchange="actualizarAvatar(this)">
+            </label>
+        </div>
+
+
+
+    </div>
+
+    
+    {% include 'Contenido/footer.html' %}
+
+        
+        <h1 style="visibility:hidden"><a href="" class="idUsuario">{{usuario.id_usuario}}</a></h1>
+
+        {% if usuario.id_usuario is none%}
+        <script>
+            alert("Por favor, inicie sesión para acceder a más características de la página web.");
+            window.location.href = "http://127.0.0.1:8000/Login/"
+        </script>
+        {% endif %}
+
+        
+</body>
+<script>
+    if (window.location.href !== "http://127.0.0.1:8000/Avatar/") {
+        window.location.href = "http://127.0.0.1:8000/Avatar/";
+    }
+</script>
+
+<script>
+    function actualizarAvatar(radioButton) {
+        var avatarPrincipalImg = document.getElementById("avatarPrincipalImg");
+        avatarPrincipalImg.src = radioButton.src;
+    }
+    
+    function confirmarAvatar() {
+        var avatarSeleccionado = document.querySelector('input[name="nuevo_avatar"]:checked');
+        if (avatarSeleccionado) {
+            var rutaAvatar = avatarSeleccionado.value;
+
+            var elemento = document.querySelector('.idUsuario');
+
+            var id = elemento.textContent;
+
+            window.location.href = "http://127.0.0.1:8000/RegistrarPerfil/" + id + "/" + rutaAvatar;
+    
+        } else {
+            alert("Por favor, seleccione un avatar antes de confirmar.");
+        }
+    }
+    
+</script>
+    
+
+</html>

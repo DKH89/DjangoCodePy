@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+  <title>CodePyAI - Python</title>
+</head>
+
+  <body>
+
+    {% include 'Contenido/menuCurso.html' %}
+
+
+      <div class="numero-leccion">
+            <h1>Lección 3 : Estructuras de control en Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/EngranajeLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>7.Listas</h1>
+
+            <p>En Python, una lista es una estructura de datos versátil que permite almacenar una colección ordenada de elementos. Estas listas pueden contener una variedad de tipos de datos, como números, cadenas, booleanos e incluso otras listas. Gracias a su flexibilidad y facilidad de uso, las listas son uno de los tipos de datos más utilizados en Python. Su capacidad para contener múltiples tipos de elementos y su capacidad para ser modificadas fácilmente las convierten en una herramienta poderosa para almacenar y manipular datos en aplicaciones Python.
+            </p>
+
+            <br>  
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/Q8hugySbLQQ" frameborder="0" allowfullscreen></iframe>
+            <br><br><br><br>
+
+            <h1>7.1 Creación de Listas</h1>
+
+            <p>Las listas en Python se crean utilizando corchetes y separando los elementos con comas. Esto permite definir fácilmente una lista de elementos, donde cada uno puede ser de cualquier tipo de datos válido en Python. Por ejemplo, una lista de números enteros se vería así: [1, 2, 3, 4, 5], mientras que una lista que contiene una mezcla de tipos de datos, como números, cadenas y booleanos, podría ser [1, "Hola", True, 3.14]. Esta flexibilidad en la creación de listas es una de las características que hacen que las listas sean tan útiles y versátiles en Python.
+            </p>
+
+            <div class="seccion-codigo">
+              <h3>#  Define una lista llamada mi_lista con 5 elementos.</h3>
+              <p class="variables"> mi_lista = </p> <p>[<p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="textocodigo">&nbsp"Juan"&nbsp</p>]</p><br>
+           </div>
+
+          <br><br>
+          <p>También se pueden crear listas vacías simplemente utilizando corchetes sin ningún elemento.</p>
+
+          <div class="seccion-codigo">
+            <h3>#  Definición de una lista vacia.</h3>
+            <p class="variables"> mi_lista = </p> <p>[ ]</p><br>
+        </div>
+
+        <br></br>
+        <h1>7.2 Acceso a elementos de la lista</h1>
+
+        <p>
+          Los elementos de una lista en Python se acceden mediante índices, comenzando desde 0 para el primer elemento, 1 para el segundo elemento y así sucesivamente. Esto significa que el primer elemento de la lista tiene un índice de 0, el segundo elemento tiene un índice de 1 y así sucesivamente. Por ejemplo, si tenemos una lista mi_lista con los elementos [10, 20, 30, 40, 50], podemos acceder al primer elemento usando mi_lista[0], al segundo elemento con mi_lista[1], y así sucesivamente. </p>
+
+          <div class="seccion-codigo">
+            <p class="variables"> mi_lista = </p> <p>[<p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="textocodigo">&nbsp"Juan"&nbsp</p>]</p><br>
+            <p class="funcion" > print </p> <p>( mi_lista&nbsp[&nbsp  <p class="valores">0</p>  ] )</p> <p class="comentarios">&nbsp# Salida: 1</p><br>
+            <p class="funcion" > print </p> <p>( mi_lista&nbsp[&nbsp  <p class="valores">1</p>  ] )</p> <p class="comentarios">&nbsp# Salida: 2</p><br>
+          </div>
+
+          <br><br>
+        <h1>7.3 Metodos en las listas</h1>
+        <p>Los métodos de las listas en Python son funciones integradas que permiten realizar diversas operaciones y manipulaciones en listas. Estos métodos proporcionan una forma conveniente de agregar, eliminar, modificar y buscar elementos en una lista, entre otras acciones. Algunos de los métodos más comunes de las listas en Python incluyen:
+        </p>
+
+        <h1>append():</h1>
+        <p>Append(): Agrega un elemento al final de la lista.        </p>
+        <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3]</p><br>
+          <p class="">mi_lista.append(4)</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp<p></p> <p class="comentarios"># Salida: [1, 2, 3, 4]</p><br>
+      </div>
+      
+
+      <br><br>
+      <h1>extend():</h1>
+      <p>Agrega los elementos de otra lista al final de la lista actual.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3]</p><br>
+          <p class="">otra_lista = [4, 5, 6]</p><br>
+          <p class="">mi_lista.extend(otra_lista)</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp<p></p> <p class="comentarios">#Salida : [1, 2, 3, 4, 5, 6]</p><br>
+      </div>
+      <br><br>
+      <h1>insert():</h1>
+      <p>Inserta un elemento en una posición específica de la lista.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3]</p><br>
+          <p class="">mi_lista.insert(1, 5)</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp<p></p> <p class="comentarios"> # Salida: [1, 5, 2, 3]</p><br>
+      </div>
+      <br><br>
+      <h1>remove():</h1>
+      <p>Elimina la primera ocurrencia de un elemento específico de la lista.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3, 4, 2]</p><br>
+          <p class="">mi_lista.remove(2)</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp<p></p> <p class="comentarios">  # Salida: [1, 3, 4, 2]</p><br>
+      </div>
+      <br><br>
+      <h1>pop():</h1>
+      <p>Elimina y devuelve el elemento en una posición específica de la lista.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3]</p><br>
+          <p class="">elemento_eliminado = mi_lista.pop(1)</p><br>
+          <p class="funcion">print<p>&nbsp(elemento_eliminado)</p> <p class="comentarios"> # Salida: 2</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp<p></p> <p class="comentarios"> # Salida: [1, 3]</p><br>
+      </div>
+      <br><br>
+      <h1>index():</h1>
+      <p>Devuelve el índice de la primera ocurrencia de un elemento específico en la lista.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3, 4, 2]</p><br>
+          <p class="">indice = mi_lista.index(2)</p><br>
+          <p class="funcion">print <p>&nbsp(indice)&nbsp</p> <p class="comentarios"> # Salida: 1</p><br>
+      </div>
+      <br><br>
+      <h1>count():</h1>
+      <p>Devuelve el número de veces que aparece un elemento en la lista.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3, 4, 2]</p><br>
+          <p class="">contador = mi_lista.count(2)</p><br>
+          <p class="funcion">print <p>&nbsp(contador)&nbsp</p> <p class="comentarios"> # Salida: 2</p><br>
+      </div>
+      <br><br>
+      <h1>sort():</h1>
+      <p>Ordena los elementos de la lista en su lugar.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[3, 1, 4, 2]</p><br>
+          <p class="">mi_lista.sort()</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp</p></p> <p class="comentarios">  # Salida: [1, 2, 3, 4]</p><br>
+      </div>
+      <br><br>
+      <h1>reverse():</h1>
+      <p>Invierte el orden de los elementos de la lista en su lugar.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3, 4]</p><br>
+          <p class="">mi_lista.reverse()</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp</p></p> <p class="comentarios"> # Salida: [4, 3, 2, 1]</p><br>
+      </div>
+      <br><br>
+      <h1>clear():</h1>
+      <p>Elimina todos los elementos de la lista.</p>
+      <div class="seccion-codigo">
+          <p class="variables">mi_lista = </p> <p>[1, 2, 3]</p><br>
+          <p class="">mi_lista.clear()</p><br>
+          <p class="funcion">print <p>&nbsp(mi_lista)&nbsp</p></p> <p class="comentarios"> # Salida: []</p><br>
+      </div>
+      
+
+
+
+        </div>
+
+      </section>
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+  
+    <div class="numero-leccion">
+      <h1 style="margin-left:0% ">Lección 2 : Sintaxis Basica de Python</h1>
+      <div class="imagen-izq">
+        <img src="../static/imagenes/SintaxisLogo.png" style="margin-left:19%"/>
+    </div>
+</div>
+
+
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>3. Variables en Python</h1>
+
+            <p>
+              En Python, las variables son contenedores utilizados para almacenar datos. Lo que distingue a Python de otros lenguajes de programación es que no es necesario declarar explícitamente el tipo de variable antes de asignarle un valor. En lugar de eso, el intérprete de Python deduce automáticamente el tipo de datos basándose en el valor asignado. </p>
+           
+            <br>
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/kQ44QoYs9Fo" frameborder="0" allowfullscreen></iframe>
+            <br><br><br>
+
+
+
+            <h1>3.1 Declaración de Variables</h1>
+
+            <p>
+              Para declarar una variable en Python, simplemente se asigna un valor a un nombre utilizando el operador de asignación =. Esta sintaxis es directa y fácil de entender, lo que facilita la creación y asignación de variables en el código. Por ejemplo, si queremos asignar el valor "Hola" a una variable llamada mensaje, simplemente escribimos mensaje = "Hola"</p>
+
+              <br>
+              <div class="seccion-codigo">
+                <h3># Declara la variable 'nombre' con el valor "Juan" y 'edad' con el valor 25.
+                </h3> <br>
+                <p class="variables"> nombre = </p> <p class="textocodigo">"Juan"</p><br>
+
+                <p class="variables"> edad = </p> <p class="valores">15</p><br>
+            </div>
+            <br>
+            <br><br>
+            <h1>3.2 Tipos de Variables en Python</h1>
+
+            <p><b>  ● Enteros (int):</b> Los enteros en Python, representados por el tipo de datos int, son números enteros sin punto decimal. Estos números pueden ser positivos o negativos, y pueden ser utilizados para representar cantidades completas sin fracciones. Por ejemplo, 0, 1, -5, y 1000 son todos ejemplos de enteros en Python.
+              <p><b>● Flotantes (float):</b> Los flotantes en Python, representados por el tipo de datos float, son números con punto decimal. Estos números pueden representar cantidades que incluyen valores fraccionarios o números decimales. Por ejemplo, 3.14, -0.5, y 2.0 son ejemplos de flotantes en Python.</p>
+              <p><b>● Cadenas (str):</b> Las cadenas en Python, representadas por el tipo de datos str, son secuencias de caracteres. Estas secuencias pueden contener letras, números, y otros caracteres especiales.</p>
+              <p><b>● Booleanos (bool):</b> Los booleanos en Python, representados por el tipo de datos bool, son valores que pueden ser True (verdadero) o False (falso). Estos valores son utilizados para representar el resultado de comparaciones o condiciones lógicas en un programa Python.</p>
+
+            </p>
+            <br>
+            <div class="seccion-codigo">
+              <h3># Declaración de variables de diferentes tipos en Python.
+              </h3> <br>
+              <p class="variables"> numero_entero = </p> <p class="valores">10</p><br>
+              <p class="variables"> numero_decimal = </p> <p class="valores">3.14</p><br>
+              <p class="variables"> texto = </p> <p class="textocodigo">"Hola, mundo!"</p><br>
+              <p class="variables"> booleano = </p> <p class="tipobooleano">True</p><br>
+
+          </div>
+
+          <br><br>
+          <h1>3.3 Convenciones de Nombres</h1>
+          <p>Es importante seguir algunas convenciones al nombrar variables en Python. Por lo general, los nombres de las variables son en minúsculas, con palabras separadas por guiones bajos para mejorar la legibilidad. Por ejemplo:
+          </p>
+
+          <div class="seccion-codigo">
+            <h3># Forma correcta de nombrar variables en Python</h3>
+             <br>
+            <p class="variables"> nombre_completo = </p> <p class="textocodigo">"Maria Gonzalez"</p><br>
+            <p class="variables"> edad_usuario = </p> <p class="valores">30</p><br>
+        </div>
+          <br>    <br>
+            <h1>3.31 Datos a tener en cuenta.</h1><br>
+            <p>● Los nombres de variables pueden contener letras, números y guiones bajos.</p>
+            <p>● Los nombres de variables no pueden comenzar con un número.            </p>
+            <p>● Python distingue entre mayúsculas y minúsculas, por lo que Nombre y nombre serían variables diferentes.            </p>
+
+            <br><br>
+
+            <div class="imagenguia">
+                <img src="../static/imagenes/SintaxisImagen1.jpg" alt="Chat Icon">
+            </div>
+
+
+
+        </div>
+
+      </section>
+
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+     
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+
+  </body>
+</html>

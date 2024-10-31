@@ -1,0 +1,212 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="{% static 'javascript/forcodigo.js' %}"></script>
+    <script src="{% static 'javascript/copilador.js' %}"></script>
+    {% csrf_token %}
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+    <div class="numero-leccion">
+      <h1 style="margin-top:2.7%">Lección 6 : Operadores en Python</h1>
+          <div class="imagen-izq">
+            <img src="../static/imagenes/LogoOperadores.png" style="margin-left:25%;margin-top:-80px"/>
+          </div>   
+    </div>
+
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>21.Operadores Logicos</h1>
+
+            <p>Los operadores lógicos en Python desempeñan un papel fundamental al combinar expresiones lógicas para evaluar condiciones más complejas. Al aplicar estos operadores, es posible realizar operaciones booleanas sobre valores booleanos, y el resultado de estas operaciones también es un valor booleano. Estos operadores, que incluyen AND, OR y NOT, son esenciales para la construcción de estructuras de control de flujo y para la toma de decisiones en Python. Permiten la creación de condiciones compuestas que dependen de múltiples variables o estados, lo que proporciona una forma poderosa de expresar la lógica en programas Python. </p>
+           
+
+            <br><br>
+              <iframe width="700" height="400" style="margin-left:19%"src="https://www.youtube.com/embed/d0md-wuw1NM" frameborder="0" allowfullscreen></iframe>
+              <br><br><br><br><br>
+
+            <h1>21.1 Operador AND</h1>
+            <p>El operador lógico and en Python se utiliza para combinar dos expresiones booleanas y evaluar si ambas son verdaderas. Devuelve True solo si ambas expresiones son verdaderas; de lo contrario, devuelve False. En otras palabras, el operador and requiere que todas las condiciones vinculadas sean verdaderas para que la expresión completa sea verdadera. Este operador es fundamental en la construcción de condiciones compuestas, donde se necesita que múltiples condiciones sean verdaderas para que se ejecute cierto bloque de código. </p>
+
+            <div class="seccion-codigo">
+
+               <p class="variables"> edad = <p class="valores">&nbsp;5</p> </p> <br>
+               <p class="variables"> es_estudiante = <p class="tipobooleano">&nbsp;True</p> </p> <br>
+      
+
+                
+              <p class="tipobooleano"> if </p> <p>edad ></p><p class="valores">18</p><p class="tipobooleano">&nbsp;and&nbsp; </p><p>es_estudiante:</p><br>
+
+              &nbsp;&nbsp;&nbsp;&nbsp<p class="funcion" > print </p> <p class="textocodigo">("Eres mayor de edad y también eres estudiante.")</p>
+          </div>
+
+          <br><br>
+          <h1>21.2 Operador OR</h1>
+          <p>
+            El operador lógico or en Python se utiliza para combinar dos expresiones booleanas y evaluar si al menos una de ellas es verdadera. Devuelve True si al menos una de las expresiones es verdadera; si ambas expresiones son falsas, devuelve False. En otras palabras, el operador or requiere que al menos una de las condiciones vinculadas sea verdadera para que la expresión completa sea verdadera. Este operador es esencial para construir condiciones en las que se requiere que al menos una de varias condiciones sea verdadera para ejecutar un bloque de código específico.</p>
+     
+     
+            <div class="seccion-codigo">
+
+              <p class="variables"> es_mayor_de_edad = <p class="tipobooleano">&nbsp;True</p> </p> <br>
+              <p class="variables"> tiene_permiso = <p class="tipobooleano">&nbsp;False</p> </p> <br>
+     
+
+               
+             <p class="tipobooleano"> if </p> <p>es_mayor_de_edad</p> <p class="tipobooleano">&nbsp;and&nbsp; </p><p>tiene_permiso:</p><br>
+
+             &nbsp;&nbsp;&nbsp;&nbsp<p class="funcion" > print </p> <p class="textocodigo">("Puede ingresar al sitio web restringido.")</p>
+         </div>
+     
+         <br><br>
+
+         <h1>21.3 Operador Not</h1>
+         <p>El operador lógico not en Python se utiliza para negar una expresión booleana, es decir, cambia True a False y False a True. Este operador es útil para invertir el valor de una expresión booleana. Por ejemplo, si se tiene una condición que se evalúa como verdadera, al aplicar el operador not, la condición se volverá falsa y viceversa. El operador not es especialmente útil cuando se desea verificar si algo no es cierto o no está presente. Por ejemplo:
+         </p>
+
+         <div class="seccion-codigo">
+
+          <p class="variables"> usuario_autenticado = <p class="tipobooleano">&nbsp;False</p> </p> <br>
+ 
+
+  
+         <p class="tipobooleano"> if not </p> <p>usuario_autenticado</p>  <br>
+
+         &nbsp;&nbsp;&nbsp;&nbsp<p class="funcion" > print </p> <p class="textocodigo">("Por favor, inicie sesión para acceder.")</p>
+     </div>
+
+     
+          </div>
+
+
+          <br><br>
+          <h1>21.4 Ejercicio de Aplicación</h1>
+
+          <p>En esta sección, encontrarás un ejercicio práctico en Python diseñado para fortalecer tus habilidades de programación. 
+            El ejercicio incluye requisitos funcionales , una descripción detallada del problema a
+             resolver, el tiempo estimado para completarlo y una muestra de su ejecución. Sigue las instrucciones proporcionadas 
+             para abordar el ejercicio y profundizar tu comprensión de Python <button id="mostrarImagenBtn"> Mostrar Ejercicio</button></p>  
+
+             <p class="descripcion-ejercicio" style="display: none;">
+              Descripción:
+              Crear un programa en Python que simule una calculadora de descuento para una tienda en línea. El programa debe solicitar al usuario ingresar el precio original del producto y un código de descuento. Luego, aplicará el descuento correspondiente según el código ingresado y mostrará el precio final después del descuento.
+              
+              Requisitos:
+              
+              Solicitar al usuario que ingrese el precio original del producto.
+              Solicitar al usuario que ingrese un código de descuento válido (por ejemplo, "DESC10" para un 10% de descuento).
+              Aplicar el descuento al precio original según el código ingresado.
+              Mostrar el precio final después de aplicar el descuento.
+              
+              Muestra de Ejecución:s
+              Ingrese el precio original del producto: 100
+              Ingrese el código de descuento (por ejemplo, 'DESC10'): DESC10
+              El precio final después del descuento es: $90.00
+             
+             </p>
+     
+        <div id="myModal" class="modal">
+               <span class="close" id="closeModal">&times;</span>
+               <img class="modal-content" id="imgModal" src="{% static 'imagenes/Ejercicio5.png' %}" alt="Chat Icon">
+           </div>
+                  
+           <div class="practica-conocimiento">
+            <h2 class="titulo-copilador">Prueba tu Codigo en este Espacio</h2>
+            <div id="codigoEstudiante" contenteditable="true" class="codigo-input" placeholder="Escribe tu código aquí..."></div>
+             
+             <!-- Botón Enviar Código -->
+             <div class="button-container">
+               <button id="enviarCodigo" class="btn-enviar">
+                   <i class="fas fa-paper-plane"></i> Ver Correciones
+               </button>
+           
+               <button id="compilarCodigo" class="btn-compilar">
+                   <i class="fas fa-play"></i> Compilar
+               </button>
+           </div>
+         </div>
+     
+  
+
+      </section>
+
+      
+      <div id="modalCorrecciones" class="modal2">
+        <div class="modal-content2">
+          <span class="close">&times;</span>
+          <h2>Correcciones del Ejercicio</h2>
+          <div id="correccionesTexto"></div>
+        </div>
+      </div>
+
+
+    <h1 id="CorreccionesEstado">e</h1>
+  </body>
+  <script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById('mostrarImagenBtn');
+    var span = document.getElementById('closeModal');
+
+    btn.onclick = function() {
+        modal.style.display = 'flex'; 
+    }
+
+    span.onclick = function() {
+        modal.style.display = 'none'; 
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none'; 
+        }
+    }
+</script>
+  
+
+<script>
+    
+  document.getElementById('compilarCodigo').onclick = function() {
+    // Verificar si el texto de las correcciones contiene la palabra "APROBADO"
+    var correccionesTexto = document.getElementById('CorreccionesEstado').innerText; // Cambiar 'correccionesEstado' a 'CorreccionesEstado'
+
+    // Comprobar si el texto es "APROBADO" (sin importar mayúsculas o minúsculas)
+    if (correccionesTexto.toUpperCase() === 'APROBADO') {
+        // Si está aprobado, proceder a compilar el código
+        var codigo = document.getElementById('codigoEstudiante').innerText;
+        var codigoCodificado = encodeURIComponent(codigo);
+        var urlCompilador = `https://paiza.io/es/projects/new?language=python3&source_code=${codigoCodificado}`;
+        window.open(urlCompilador, '_blank');
+    } else {
+        // Si no está aprobado, mostrar un mensaje de error
+        alert('Debes corregir el código antes de compilar.');
+    }
+};
+
+  </script>
+
+
+</html>

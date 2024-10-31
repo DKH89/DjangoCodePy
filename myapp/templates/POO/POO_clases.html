@@ -1,0 +1,148 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+   
+      <div class="numero-leccion">
+            <h1 style="margin-top:2.5%">Lección 5 : Programación Orientada a Objetos</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/PooLogo.png" style="margin-left:19%;width:7%;margin-top:-70px"/>
+            </div>
+      </div>
+
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>14.Programación Orientada a Objetos</h1>
+
+              <p>La Programación Orientada a Objetos (POO) es un paradigma de programación que se fundamenta en el concepto de "objetos", los cuales son entidades que unen datos (atributos) y funciones (métodos) que trabajan con esos datos. Este enfoque permite organizar el código de forma más intuitiva y modular, lo que simplifica la reutilización y el mantenimiento del código. En la POO, los objetos representan entidades del mundo real o conceptos abstractos, y las interacciones entre ellos se modelan a través de métodos que operan en los datos encapsulados en los objetos.</p>           
+
+              <br>
+
+          
+              <br>
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/DlphYPc_HKk" frameborder="0" allowfullscreen></iframe>
+            <br><br><br><br>
+
+
+
+
+            <br>
+
+          <h1>14.1 Clases en Python</h1>
+          <p>
+            Una clase en Python es un tipo de estructura fundamental que se emplea para definir objetos. Funciona como un molde que establece las características y acciones que los objetos creados a partir de ella compartirán. A través de una clase, se especifican los atributos que describen el estado de los objetos, así como los métodos que determinan su comportamiento. De esta manera, las clases permiten organizar y modularizar el código de manera efectiva, facilitando la creación y gestión de objetos con propiedades y funcionalidades similares.</p>
+
+            <div class="seccion-codigo">
+              <p class="tipobooleano"> class </p> <p><p class="funciones">NombreClase </p><p> :</p> <br>
+              <p class="comentarios">&nbsp;&nbsp;&nbsp;# Definición de atributos y métodos   </p> <br>
+              <p>&nbsp;&nbsp;&nbsp;...</p>
+            </div> <br>
+
+            <br>
+          <h1>14.2 Objetos en Python</h1>
+
+          <p>Un objeto representa una instancia única de una clase. Al crear un objeto, esencialmente estás instanciando una versión específica de la plantilla previamente definida por la clase correspondiente. Estos objetos son entidades independientes con sus propios conjuntos de atributos y capacidades. Los atributos definen las características específicas de cada objeto, mientras que los métodos proporcionan las acciones que pueden realizar. Para crear un objeto en Python, simplemente instancias la clase usando la siguiente sintaxis:
+          </p>
+
+          <div class="seccion-codigo">
+            <br>
+            <p>nombre_objeto = NombreClase()
+            </p>
+          </div> <br><br>
+
+
+          <h1>14.3 Metodos en Python</h1>
+          <p>Los métodos son funciones que están definidas dentro de una clase y que especifican el comportamiento de los objetos que se crean a partir de esa clase. Estas funciones son específicas de la clase en la que están definidas y pueden acceder a los datos de la instancia utilizando el parámetro self. Los métodos son fundamentales para la Programación Orientada a Objetos (POO) en Python, ya que permiten encapsular la lógica relacionada con los objetos y promueven la reutilización de código al definir comportamientos específicos que pueden ser invocados por múltiples instancias de la clase. </p>
+
+          <div class="seccion-codigo">
+            <p class="tipobooleano"> def </p> <p><p class="funciones">&nbspnombre_del_metodo&nbsp</p><p>(parametro1, parametro2, ...):</p>
+            <h3 style="margin-top:-1%">&nbsp;&nbsp;&nbsp;&nbsp;# Cuerpo del metodo</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Aquí se define qué acciones realiza la metodo</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Puede contener cualquier cantidad de instrucciones</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Puede hacer uso de los parámetros que recibe</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Puede devolver un valor utilizando la palabra clave return</h3>
+         </div>
+         <br>  <br>
+         <h1>14.4 Aplicación</h1>
+         <p>Este código define una clase llamada Perro, que tiene un constructor __init__() para inicializar los atributos nombre y edad de cada objeto. Además, la clase tiene un método ladrar() que devuelve un mensaje de ladrido con el nombre del perro. Luego, se crea un objeto mi_perro de la clase Perro con el nombre "Fido" y la edad 3. Posteriormente, se acceden a los atributos del objeto y se imprime su nombre y edad. Finalmente, se llama al método ladrar() del objeto, imprimiendo un ladrido con el nombre del perro en la consola. </p>
+
+         <div class="seccion-codigo">
+          <p class="tipobooleano"> class </p> <p><p class="funciones">Perro </p><p> :</p> <br>
+          <p class="comentarios">&nbsp;&nbsp;&nbsp;<p class="tipobooleano">def</p> <p class="funciones">_ _init_ _</p> <p>(self, nombre, edad):</p> </p> <br>
+         
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre</p><br>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.edad = edad</p> <br>
+
+          <p class="comentarios">&nbsp;&nbsp;&nbsp;<p class="tipobooleano">def</p> <p class="funciones">ladrar</p> <p>(self):</p> </p> <br>
+
+          <p class="tipobooleano">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</p> <p class="textocodigo">&nbsp;f"{self.nombre} dice: ¡Guau!"</p> <br>
+          
+
+          <p class="comentarios"># Crear un objeto de la clase Perro          </p> <br>
+
+          <p>mi_perro = Perro(<p class="textocodigo">"Fido"</p>, <p class="valores">3</p>)          </p> <br>
+        
+          <p class="comentarios"># Acceder a los atributos del objeto </p> <br>
+
+          <p class="funcion">print</p> <p>(<p class="textocodigo">f"Nombre: {mi_perro.nombre}, Edad: {mi_perro.edad}</p>")</p> <br>
+
+          <p class="comentarios"># Llamar al método del objeto          </p> <br>
+
+          <p class="funcion">print</p> <p>( mi_perro.ladrar () )</p> <br>
+
+
+
+        </div> <br>
+
+        </div>
+
+      </section>
+
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+  </body>
+</html>

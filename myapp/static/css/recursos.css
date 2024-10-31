@@ -1,0 +1,259 @@
+*{
+    padding: 0;
+    margin: 0 ;
+}
+
+
+
+body {
+    background-image: url('../imagenes/Fondo16.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    font-family: Studio-Feixen-Sans, Arial;
+}
+
+.contenido-entrada{
+    margin-left: 12%;
+    margin-top: 10%;
+    width: 80%;
+
+}
+
+.contenido-imagenes{
+    margin-left: 11%;
+    width: 80%;
+}
+
+.contenido-entrada h1{
+    color: white;
+    margin-bottom: 2%;
+    font-size: 32px;
+    text-align: center;
+}
+
+.contenido-entrada p{
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 27px;
+    margin-bottom: 8%;
+    text-align: center;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 20px;
+    margin-top: -60px;
+}
+
+.gallery-item {
+    width: calc(50% - 10px); 
+    margin-bottom: 30px; 
+    overflow: hidden;
+    border-radius: 10px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    text-align: center;
+
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+
+.gallery-item h2 {
+    background-color: #005f66;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+    font-size: 25px;
+}
+
+
+
+
+header {
+  
+    position: fixed;  
+    top: 0;
+    left: 0 ;
+    width: 100%;    
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    padding: 30px 20px;
+    z-index: 10;
+    background-color: #07153ae7;
+}
+
+
+header .logo {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition: 1.5s;
+    text-decoration: none;
+}
+
+
+header.abajo{
+    background:#0e0048 ;
+    padding: 15px 20px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header ul {
+
+    position: relative;
+    display: flex ;
+    justify-content: center;
+    align-items: center ;
+
+}
+
+header ul li {
+    list-style: none;
+    color: white;
+}
+
+header ul li .boton {
+    border: 2px solid #9ba3ab;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px; 
+}
+
+.boton:hover {
+    border: 2px solid #03ef62;
+}
+
+
+header ul li a {
+    position: relative;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.7s;
+}
+
+
+header ul li a:hover {
+    background-color: #213147;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.footer {
+    background-color: #000000;
+    padding: 20px 0;
+    margin-left: 0px;
+    margin-bottom: -100px;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.footer-row{
+    display: flex;
+}
+
+.footer-links{
+    width: 25%;
+    padding: 0 15px;
+    margin-left: 100px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+
+.footer-links p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    float: left;
+    margin-left: 300px;
+}
+
+
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #BBBBBB;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 6px;
+}
+
+.social-link a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    margin-right: 10px; 
+}
+
+.social-link a:last-child {
+    margin-right: 0; 
+}
+.social-link a:hover {
+
+    background-color: #00C3FF;
+}
+
+/* Estilos para el menú desplegable */
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: -1;
+    margin-top: 1.7%;
+    margin-left: 0.5%;
+}
+.menu-desplegable a {
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+}
+.menu-desplegable a:hover {
+    background-color: #f1f1f1;
+}
+.menu-boton:hover .menu-desplegable {
+    display: block;
+}

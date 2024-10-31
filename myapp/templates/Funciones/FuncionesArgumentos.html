@@ -1,0 +1,219 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'javascript/forcodigo.js' %}"></script>
+    <script src="{% static 'javascript/copilador.js' %}"></script>
+    {% csrf_token %}
+
+
+    <title>CodePyAI  -  Python</title>
+  </head>
+  
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+  
+
+      <div class="numero-leccion">
+            <h1>Lección 4 : Funciones en Python </h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/EngranajeLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+          <h1>13. Argumentos en Funciones</h1>
+          <p>
+            En Python, los argumentos de funciones son los valores que se pasan a una función cuando se la invoca. Estos argumentos proporcionan datos o información necesaria para que la función realice operaciones específicas dentro de su cuerpo. Los argumentos pueden ser de diferentes tipos, como valores simples, listas, diccionarios u otros objetos más complejos, y pueden ser utilizados por la función para realizar cálculos, operaciones lógicas o cualquier otra tarea necesaria. Los argumentos de funciones permiten que las funciones sean flexibles y reutilizables, ya que pueden adaptarse dinámicamente según los valores que se les pasen al llamarlas, lo que aumenta la modularidad y la legibilidad del código.</p>
+        
+            <br>
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/7a3d0Du3OHc" frameborder="0" allowfullscreen></iframe>
+            <br><br><br>
+            
+            <h1>13.1 Argumentos posicionales</h1>
+            <p>Los argumentos posicionales son aquellos que se pasan a una función en el mismo orden en que se definen en la declaración de la función. Cuando se invoca la función, los valores proporcionados se asignan a los parámetros de la función según su posición. Esto significa que el primer valor se asigna al primer parámetro, el segundo valor al segundo parámetro, y así sucesivamente. Este método de asignación es directo y se basa en la posición de los argumentos en la llamada de la función. </p>
+
+            <div class="seccion-codigo">
+              <p class="tipobooleano"> def </p> <p><p class="funciones">saludar </p><p>(nombre,edad):</p> <br>
+              <p class="funcion">&nbsp;&nbsp;&nbsp;&nbspprint</p> <p>( <p class="textocodigo">&nbsp;" Hola, "</p> , nombre ,  <p class="textocodigo">"tienes" </p>&nbsp; , edad , <p class="textocodigo">"años"</p>) <br>
+
+              <p>saludar (<p class="textocodigo">&nbsp"&nbspJuan&nbsp"</p>,<p class="valores"> &nbsp30&nbsp </p>) </p>
+            </div>
+
+            <br><br>
+
+            
+            <h1>13.2 Argumentos de palabras clave</h1>
+            <p>
+              Los argumentos de palabra clave son aquellos que se pasan a una función utilizando el nombre del parámetro al que se desea asignar el valor. Esto proporciona flexibilidad al llamar a la función, ya que los argumentos pueden especificarse en cualquier orden. Además, este enfoque proporciona mayor claridad y legibilidad al código, ya que permite identificar fácilmente qué argumento se asigna a qué parámetro. </p>
+
+              <div class="seccion-codigo">
+                <p class="tipobooleano"> def </p> <p><p class="funciones">saludar </p><p>(nombre,edad):</p> <br>
+                <p class="funcion">&nbsp;&nbsp;&nbsp;&nbspprint</p> <p>( <p class="textocodigo">&nbsp;" Hola, "</p> , nombre ,  <p class="textocodigo">"tienes" </p>&nbsp; , edad , <p class="textocodigo">"años"</p>) <br>
+  
+                <p>saludar ( edad = <p class="valores">30</p> , nombre = <p class="textocodigo">"Juan"</p>)</p>
+              </div>
+        </div>
+        <br><br>
+       
+
+        
+
+
+
+
+        <h1>13.3 Argumentos por defecto </h1>
+        <p>Son argumentos que tienen un valor predeterminado asignado en la declaración de la función. Si no se proporciona un valor para estos argumentos al llamar a la función, se utilizará el valor predeterminado. Esto permite que una función sea más flexible y no requiera que todos los argumentos sean especificados en cada llamada.</p>
+    
+        <div class="seccion-codigo">
+          <p class="tipobooleano"> def </p> <p><p class="funciones">saludar </p><p>(nombre,edad = <p class="valores">18</p>):</p> <br>
+          <p class="funcion">&nbsp;&nbsp;&nbsp;&nbspprint</p> <p>( <p class="textocodigo">&nbsp;" Hola, "</p> , nombre ,  <p class="textocodigo">"tienes" </p>&nbsp; , edad , <p class="textocodigo">"años"</p>) <br>
+
+          <p>saludar (<p class="textocodigo">"Juan"</p>)</p>
+        </div>
+    
+        <br><br>
+
+        <h1>13.4 Argumentos arbitrarios (*args y kwargs):</h1>
+        <p>
+          Los argumentos *args y **kwargs permiten pasar un número variable de argumentos a una función en Python. El uso de *args permite pasar una lista de argumentos posicionales arbitrarios, lo que significa que se pueden pasar cualquier cantidad de argumentos posicionales separados por comas al llamar a la función. Por otro lado, **kwargs permite pasar un diccionario de argumentos de palabra clave arbitrarios, lo que significa que se pueden pasar cualquier cantidad de argumentos de palabra clave con sus respectivos valores al llamar a la función.</p>
+
+
+        <div class="seccion-codigo">
+          <p class="tipobooleano">def</p> <p><span class="funciones"><p class="funciones">saludar</p></span></p><p>(*nombres):</p><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<p class="tipobooleano">for</p> <span class="funcion">nombre</span> <p class="tipobooleano">in</p> <span class="funciones">nombres</span>:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print</p>("Hola,", <span class="funcion">nombre</span>)<br><br>
+      
+          <p><span class="funciones">saludar<p></span>(<p class="textocodigo">"Juan", "María", "Carlos"</p>)</p><br>
+      
+          <p class="tipobooleano">def</p> <p><span class="funciones"><p class="funciones">detalles</p></span></p><p>(**info):</p><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<p class="tipobooleano">for</p> <span class="funcion">clave</span>, <span class="funcion">valor</span> <p class="tipobooleano">in</p> <span class="funciones">info.items()</span>:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print</p>(<span class="funcion">clave</span> + <p class="textocodigo">":" </p>, <span class="funcion">valor</span>)<br><br>
+      
+          <p><span class="funciones">detalles</span>(nombre=<p class="textocodigo">"Juan"</p>, edad=<p class="valores">30</p>, ciudad=<p class="textocodigo">"Madrid"</p>)</p>
+      </div>
+
+      <br><br>
+      <p>
+        Este código define dos funciones en Python. La primera función llamada "saludar" utiliza el argumento *nombres para permitir un número variable de nombres como entrada. Dentro de la función, se itera a través de cada nombre en la lista de nombres y se imprime un saludo personalizado para cada uno. Luego, se llama a la función "saludar" con los nombres "Juan", "María" y "Carlos". La segunda función llamada "detalles" utiliza el argumento **info para permitir un número variable de argumentos de palabra clave. Dentro de la función, se itera a través de los elementos del diccionario info y se imprime cada clave y su respectivo valor. Finalmente, se llama a la función "detalles" con los argumentos de palabra clave "nombre" con el valor "Juan", "edad" con el valor 30, y "ciudad" con el valor "Madrid". Este código demuestra el uso de *args y **kwargs para manejar argumentos variables en funciones</p>
+
+
+      <h1>13.5 Ejercicio de Aplicación</h1>
+
+      <p>En esta sección, encontrarás un ejercicio práctico en Python diseñado para fortalecer tus habilidades de programación. 
+        El ejercicio incluye requisitos funcionales , una descripción detallada del problema a
+        resolver, el tiempo estimado para completarlo y una muestra de su ejecución. Sigue las instrucciones proporcionadas 
+        para abordar el ejercicio y profundizar tu comprensión de Python <button id="mostrarImagenBtn"> Mostrar Ejercicio</button></p>  
+
+      <p class="descripcion-ejercicio" style="display: none;">
+        Descripción:
+
+        El objetivo de este ejercicio es implementar funciones en Python que calculen el factorial de un número dado utilizando diferentes enfoques: recursivo e iterativo. Además, se debe desarrollar una función principal que permita alternar entre estos enfoques según un argumento opcional.
+        
+        Requisitos:
+        
+        Función de Factorial Recursivo: Una función factorial_recursivo(n) que calcule el factorial de un número n de manera recursiva.
+        Función de Factorial Iterativo: Una función factorial_iterativo(n) que calcule el factorial de un número n de manera iterativa.
+        Función Principal: Una función calcular_factorial(n, recursivo=True) que, dependiendo del valor de recursivo, llame a factorial_recursivo(n) o factorial_iterativo(n) para calcular el factorial de n.
+        Argumentos de Funciones: La función calcular_factorial debe tomar un argumento opcional recursivo que por defecto sea True, indicando si se quiere usar el método recursivo o no.
+        Tiempo Estimado: 30 minutos
+        
+        Ejemplo de Ejecución:
+        
+        Factorial de 5 (recursivo): 120
+        Factorial de 5 (iterativo): 120
+            
+      </p>
+
+
+      <div id="myModal" class="modal">
+          <span class="close" id="closeModal">&times;</span>
+          <img class="modal-content" id="imgModal" src="{% static 'imagenes/Ejercicio3.png' %}" alt="Chat Icon">
+      </div>
+             
+      <div class="practica-conocimiento">
+        <h2 class="titulo-copilador">Prueba tu Codigo en este Espacio</h2>
+        <div id="codigoEstudiante" contenteditable="true" class="codigo-input" placeholder="Escribe tu código aquí..."></div>
+        
+        <!-- Botón Enviar Código -->
+        <div class="button-container">
+          <button id="enviarCodigo" class="btn-enviar">
+              <i class="fas fa-paper-plane"></i> Ver Correciones
+          </button>
+      
+          <button id="compilarCodigo" class="btn-compilar">
+              <i class="fas fa-play"></i> Compilar
+          </button>
+      </div>
+
+    </div>
+
+
+      </section>
+
+      <div id="modalCorrecciones" class="modal2">
+        <div class="modal-content2">
+          <span class="close">&times;</span>
+          <h2>Correcciones del Ejercicio</h2>
+          <div id="correccionesTexto"></div>
+        </div>
+      </div>
+      
+    
+
+
+    <h1 id="CorreccionesEstado">e</h1>
+
+
+  </body>
+  <script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById('mostrarImagenBtn');
+    var span = document.getElementById('closeModal');
+
+    btn.onclick = function() {
+        modal.style.display = 'flex'; 
+    }
+
+    span.onclick = function() {
+        modal.style.display = 'none'; 
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none'; 
+        }
+    }
+</script>
+
+<script>
+    
+  document.getElementById('compilarCodigo').onclick = function() {
+    var correccionesTexto = document.getElementById('CorreccionesEstado').innerText;
+
+
+    if (correccionesTexto.toUpperCase() === 'APROBADO') {
+       
+        var codigo = document.getElementById('codigoEstudiante').innerText;
+        var codigoCodificado = encodeURIComponent(codigo);
+        var urlCompilador = `https://paiza.io/es/projects/new?language=python3&source_code=${codigoCodificado}`;
+        window.open(urlCompilador, '_blank');
+    } else {
+       
+        alert('Debes corregir el código antes de compilar.');
+    }
+};
+
+  </script>
+</html>

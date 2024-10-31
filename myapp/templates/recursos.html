@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePyAI</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recursos.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   
+    {% include 'Contenido/menu.html' %}
+
+    <br><br>
+    <section class="contenido-entrada">
+       <h1 class="Titulos">Herramientas a Utilizar.</h1>
+       <div class="Texto">
+            
+            <p>
+                En esta sección, destacamos la importancia de contar con las herramientas adecuadas para maximizar el aprendizaje y 
+                la experiencia del estudiante en nuestro curso de Python. Por ello, hemos elaborado una lista detallada de 
+                los elementos necesarios que garantizarán un progreso fluido y eficaz a lo largo del curso.
+            </p>
+        </div>
+    </section>
+
+    <section class="contenido-imagenes">
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <h2>Python</h2>
+            <img src="../static/imagenes/RecursosPython.PNG" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+            <h2>Foro de Python</h2>
+            <img src="../static/imagenes/RecursosJava.PNG" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+            <h2>Visual Studio</h2>
+            <img src="../static/imagenes/RecursosVisual.PNG" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+            <h2>GitHub</h2>
+            <img src="../static/imagenes/RecursosNets.PNG" alt="Imagen 1">
+        </div>
+
+    </div>
+    
+    </section>
+    <br><br>
+
+    
+
+    {% include 'Contenido/footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+table{
+    background-color: rebeccapurple;
+    margin-left: 33%;
+    width: 60%;
+    margin-top: 2%;
+}
+
+table th{
+    background-color: #afff9f;
+    color: #000000;
+    padding: 10px;
+}
+
+table td{
+    background-color: #c9fabf;
+    color: #000000;
+    padding: 10px;
+}
+
+.contenedor-2 {
+    background-color: rgba(41, 39, 39, 1);
+    padding: 50px;
+    width: 800px;
+    height: 700px;
+}
+
+.contenedor-1 {
+    background-color: rgba(33, 30, 31, 1);
+    padding: 50px;
+    width: 500px;
+    height: 700px;
+    margin-right: 0px; 
+}
+
+.contenidop{
+    margin-top: 70%;
+}

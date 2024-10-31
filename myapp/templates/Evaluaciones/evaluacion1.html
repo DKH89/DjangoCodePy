@@ -1,0 +1,184 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+   
+      <div class="numero-leccion">
+        <h1 style="margin-top:2.5%">Evaluacion 1: Curso Python (50%)<h1>
+              <div class="imagen-izq">
+                <img src="../static/imagenes/LogoArchivos.png" style="margin-left:17%;width:7%;margin-top:-105px"/>
+              </div>
+      </div>
+
+
+      <section class="Lecciones">
+
+  
+        <h1>1. Acerca del formulario (Nota: {{ infousuario.progreso_curso }} % 
+            {% if infousuario.progreso_curso >= 50 %}
+                - Nota final: Aprobado
+            {% elif infousuario.progreso_curso >= 35 %}
+                - Nota parcial: Aprobado
+            {% else %}
+                - Desaprobado
+            {% endif %}
+        )</h1>
+                
+
+        <p>Este formulario es una evaluación de conocimientos básicos sobre Python, diseñada para medir la comprensión de conceptos fundamentales como la sintaxis básica, las estructuras de datos (listas, tuplas, diccionarios) y las funciones (incluyendo recursividad y manejo de argumentos). Cada pregunta presenta varias opciones de respuesta, de las cuales solo una es correcta. Para responder, selecciona la opción que consideres correcta para cada pregunta y, al finalizar, presiona el botón "Calificar" para obtener tu puntuación. La calificación se mostrará en una escala de 100%, evaluando tu rendimiento en esta evaluación básica de Python.</p>        
+        
+        <div class="contenedor">
+          <form id="quizForm">
+              <div class="question">
+                  <p>1. ¿Cuál es la forma correcta de declarar una variable en Python?</p>
+                  <label><input type="radio" name="q1" value="a"> var x = 5;</label><br>
+                  <label><input type="radio" name="q1" value="b"> x = 5;</label><br>
+                  <label><input type="radio" name="q1" value="c"> int x = 5;</label>
+              </div>
+              <div class="question">
+                  <p>2. ¿Cómo se crea una lista en Python?</p>
+                  <label><input type="radio" name="q2" value="a"> x = [1, 2, 3]</label><br>
+                  <label><input type="radio" name="q2" value="b"> x = (1, 2, 3)</label><br>
+                  <label><input type="radio" name="q2" value="c"> x = {1, 2, 3}</label>
+              </div>
+              <div class="question">
+                <p>3. ¿Cuál es la salida si se cumple la condición siguiente en Python?</p>
+                <pre>
+                if x > 5:
+                    print("Mayor que 5")
+                else:
+                    print("Menor o igual que 5")
+                </pre>
+                <label><input type="radio" name="q3" value="a"> Mayor que 5</label><br>
+                <label><input type="radio" name="q3" value="b"> Menor o igual que 5</label><br>
+                <label><input type="radio" name="q3" value="c"> Depende del valor de x</label>
+            </div>
+            
+              <div class="question">
+                  <p>4. ¿Cuál es la forma correcta de definir una función en Python?</p>
+                  <label><input type="radio" name="q4" value="a"> function myFunc():</label><br>
+                  <label><input type="radio" name="q4" value="b"> def myFunc():</label><br>
+                  <label><input type="radio" name="q4" value="c"> func myFunc():</label>
+              </div>
+              <div class="question">
+                  <p>5. ¿Cómo se define una tupla en Python?</p>
+                  <label><input type="radio" name="q5" value="a"> x = [1, 2, 3]</label><br>
+                  <label><input type="radio" name="q5" value="b"> x = (1, 2, 3)</label><br>
+                  <label><input type="radio" name="q5" value="c"> x = {1, 2, 3}</label>
+              </div>
+              <div class="question">
+                  <p>6. ¿Cuál es la salida de la siguiente función recursiva en Python?</p>
+                  <pre>
+  def factorial(n):
+      if n == 0:
+          return 1
+      else:
+          return n * factorial(n-1)
+  
+  print(factorial(3))
+                  </pre>
+                  <label><input type="radio" name="q6" value="a"> 3</label><br>
+                  <label><input type="radio" name="q6" value="b"> 6</label><br>
+                  <label><input type="radio" name="q6" value="c"> 9</label>
+              </div>
+              <div class="question">
+                  <p>7. ¿Cómo se accede a un valor en un diccionario en Python?</p>
+                  <label><input type="radio" name="q7" value="a"> x['clave']</label><br>
+                  <label><input type="radio" name="q7" value="b"> x.clave</label><br>
+                  <label><input type="radio" name="q7" value="c"> x(clave)</label>
+              </div>
+              <div class="question">
+                  <p>8. ¿Cómo se define una función con argumentos en Python?</p>
+                  <label><input type="radio" name="q8" value="a"> def myFunc(arg1, arg2):</label><br>
+                  <label><input type="radio" name="q8" value="b"> function myFunc(arg1, arg2):</label><br>
+                  <label><input type="radio" name="q8" value="c"> myFunc def(arg1, arg2):</label>
+              </div>
+              <div class="question">
+                  <p>9. ¿Qué tipo de dato es el resultado de la expresión 3 + 2.0 en Python?</p>
+                  <label><input type="radio" name="q9" value="a"> int</label><br>
+                  <label><input type="radio" name="q9" value="b"> float</label><br>
+                  <label><input type="radio" name="q9" value="c"> str</label>
+              </div>
+              <div class="question">
+                <p>10. ¿Cuál es la salida del siguiente bucle en Python?</p>
+                <pre>
+                for i in range(1, 4):
+                    print(i)
+                </pre>
+                <label><input type="radio" name="q10" value="a"> 1, 2, 3</label><br>
+                <label><input type="radio" name="q10" value="b"> 1, 2, 3, 4</label><br>
+                <label><input type="radio" name="q10" value="c"> 0, 1, 2, 3</label>
+            </div>
+            
+              <button type="button" onclick="gradeQuiz()">Calificar</button>
+          </form>
+          <div id="result"></div>
+      </div>
+      </section>
+
+   
+      <script>
+        function gradeQuiz() {
+          const correctAnswers = {
+              q1: "b",
+              q2: "a",
+              q3: "c",
+              q4: "b",
+              q5: "b",
+              q6: "b",
+              q7: "a",
+              q8: "a",
+              q9: "b",
+              q10: "a"
+          };
+      
+          let score = 0;
+          const form = document.getElementById("quizForm");
+          const formData = new FormData(form);
+      
+          for (let [question, answer] of formData.entries()) {
+              if (answer === correctAnswers[question]) {
+                  score += 10;
+              }
+          }
+      
+          document.getElementById("result").innerText = `Tu puntuación es: ${score}%`;
+          alert(`Tu puntuación es: ${score}%`);
+
+          window.location.href = "http://127.0.0.1:8000/actualizarNota1/"+score;
+
+      }
+      </script>
+
+      <script>
+        var currentUrl = window.location.href;
+        if (currentUrl != "http://127.0.0.1:8000/Evaluacion1/") {
+            window.location.href = "http://127.0.0.1:8000/Evaluacion1/";
+        }
+    </script>
+    
+
+  </body>
+</html>

@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+    <div class="numero-leccion">
+      <h1 style="margin-top:2.7%">Lección 6 : Operadores en Python</h1>
+          <div class="imagen-izq">
+            <img src="../static/imagenes/LogoOperadores.png" style="margin-left:25%;margin-top:-80px"/>
+          </div>   
+    </div>
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>20.Operadores Relacionales</h1>
+            <p>
+              Los operadores relacionales desempeñan un papel fundamental en la comparación de valores para determinar su relación relativa. Al evaluar expresiones que involucran estos operadores, se obtiene un resultado booleano, es decir, True o False, que indica si la relación entre los valores es verdadera o falsa. Estos operadores son esenciales en la lógica de control de flujo y la toma de decisiones en Python, ya que permiten construir condiciones que guían el comportamiento del programa según la relación entre los datos.</p>
+              <br><br>
+              <iframe width="700" height="400" style="margin-left:19%"src="https://www.youtube.com/embed/Xe0Ijq4Vc8E" frameborder="0" allowfullscreen></iframe>
+              <br><br><br><br><br>
+
+
+              <h1>20.1 Tipos de Operadores Relacionales</h1>
+              <p> Los operadores relacionales en Python se utilizan para realizar diversas operaciones de comparación entre valores. </p>
+  
+              <b> ● Igualdad (==) </b>: Comprueba si dos valores son iguales.         <br> <br>
+              <div class="seccion-codigo">
+                <h3> # Salida: True </h3>
+                 <br>
+                 <p class="variables"> a = <p class="valores">5</p> </p> <br>
+                 <p class="variables"> b = <p class="valores">5</p> </p> <br>
+
+                  <p class="funcion "> print<p>( a == b)</p> </p> <br>
+            </div>
+  
+            <br><br>
+            <b> ● Desigualdad (!=) </b>: Comprueba si dos valores son diferentes.        <br> <br>
+            <div class="seccion-codigo">
+              <h3> # Salida: True </h3>
+               <br>
+               <p class="variables"> a = <p class="valores">5</p> </p> <br>
+               <p class="variables"> b = <p class="valores">3</p> </p> <br>
+
+                <p class="funcion "> print<p>( a != b)</p> </p> <br>
+          </div>
+
+          <br><br>
+          <b> ● Mayor que (>) </b>: Comprueba si el valor de la izquierda es mayor que el valor de la derecha       <br> <br>
+          <div class="seccion-codigo">
+            <h3> # Salida: True </h3>
+             <br>
+             <p class="variables"> a = <p class="valores">7</p> </p> <br>
+             <p class="variables"> b = <p class="valores">5</p> </p> <br>
+
+              <p class="funcion "> print<p>( a > b)</p> </p> <br>
+        </div>
+
+        <br><br>
+        <b> ● Menor que (<) </b>: Comprueba si el valor de la izquierda es mayor que el valor de la derecha       <br> <br>
+        <div class="seccion-codigo">
+          <h3> # Salida: True </h3>
+           <br>
+           <p class="variables"> a = <p class="valores">3</p> </p> <br>
+           <p class="variables"> b = <p class="valores">5</p> </p> <br>
+
+            <p class="funcion "> print<p>( a < b)</p> </p> <br>
+      </div>
+
+      <br><br>
+      <b> ● Mayor o igual que (>=) </b>: Comprueba si el valor de la izquierda es mayor o igual que el valor de la derecha.    <br> <br>
+      <div class="seccion-codigo">
+        <h3> # Salida: True </h3>
+         <br>
+         <p class="variables"> a = <p class="valores">5</p> </p> <br>
+         <p class="variables"> b = <p class="valores">5</p> </p> <br>
+
+          <p class="funcion "> print<p>( a >= b)</p> </p> <br>
+    </div>
+
+    <br><br>
+    <b> ● Menor o igual que (<=) </b>: Comprueba si el valor de la izquierda es menor o igual que el valor de la derecha.     <br> <br>
+    <div class="seccion-codigo">
+      <h3> # Salida: True </h3>
+       <br>
+       <p class="variables"> a = <p class="valores">3</p> </p> <br>
+       <p class="variables"> b = <p class="valores">5</p> </p> <br>
+
+        <p class="funcion "> print<p>( a <= b)</p> </p> <br>
+  </div>
+
+
+
+
+
+
+    </div>
+        </div>
+
+      </section>
+
+
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+      <div class="numero-leccion">
+            <h1>Lección 4 : Funciones en Python </h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/CodigoLogoF.png" style="margin-left:25%"/>
+            </div>
+      </div>
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>10. Definición de Funciones</h1>
+            <p>
+              Las funciones en Python son bloques de código reutilizables que realizan una tarea específica cuando son llamadas. Proporcionan una forma de estructurar y modularizar el código, lo que facilita su mantenimiento y comprensión. Al definir una función, se especifica el nombre de la función y el conjunto de instrucciones que se ejecutarán cuando la función sea llamada. Las funciones pueden aceptar cero o más argumentos, y pueden devolver un valor opcionalmente.   
+            </p>
+
+            <br>      
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/_C7Uj7O5o_Q" frameborder="0" allowfullscreen></iframe>
+            <br><br><br><br>
+
+            <h1>10.1 Sintaxis de una función</h1>
+            <p>En Python, la definición de una función sigue una sintaxis clara y estructurada. Se inicia con la palabra clave def, seguida del nombre de la función y entre paréntesis los parámetros que puede recibir. Luego, se utiliza dos puntos : para indicar el comienzo del cuerpo de la función, que está indentado. En este cuerpo se encuentran las instrucciones que definen las acciones que la función realizará cuando sea llamada. Opcionalmente, la función puede contener una declaración return para devolver un valor específico al lugar desde donde fue llamada.
+            </p>
+
+
+            <div class="seccion-codigo">
+              <p class="tipobooleano"> def </p> <p><p class="funciones">&nbspnombre_de_la_funcion&nbsp</p><p>(parametro1, parametro2, ...):</p>
+              <h3 style="margin-top:-1%">&nbsp;&nbsp;&nbsp;&nbsp;# Cuerpo de la función</h3>
+              <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Aquí se define qué acciones realiza la función</h3>
+              <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Puede contener cualquier cantidad de instrucciones</h3>
+              <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Puede hacer uso de los parámetros que recibe</h3>
+              <h3>&nbsp;&nbsp;&nbsp;&nbsp;# Puede devolver un valor utilizando la palabra clave return</h3>
+           </div>
+
+           <br><br>
+           <h1>10.2 ¿Como llamamos a una función?</h1>
+
+           <p> Llamar a una función en Python significa invocarla para que ejecute su código. Esto se hace escribiendo el nombre de la función seguido de paréntesis, y proporcionando los argumentos necesarios si la función los requiere. Por ejemplo, si tenemos una función llamada saludar que acepta un nombre como argumento, la llamamos simplemente escribiendo saludar("Juan"). Esto le indica a Python que ejecute el código dentro de la función saludar, utilizando "Juan" como valor para el parámetro nombre. </p>
+
+           
+           <div class="seccion-codigo">
+            <h3># Definición de la función saludar    </h3><br>
+            <p class="tipobooleano"> def </p> <p><p class="funciones">saludar </p><p>(nombre):</p> <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;mensaje = </p> <p class="textocodigo">"¡Hola, "</p> <p>+ nombre +</p> <p class="textocodigo">"!"</p><br>
+            <p class="tipobooleano">&nbsp;&nbsp;&nbsp;&nbspreturn</p> <p> mensaje </p><br>
+
+            <h3># Llamada a la función saludar   </h3><br>
+            <p>nombre = </p> <p class="textocodigo">"Juan"</p><br>
+            <p>saludo = saludar(nombre)</p><br>
+            <p class="funcion">print</p> <p>(saludo)</p>
+            
+         </div>
+
+
+
+        </div>
+
+      </section>
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+
+  </body>
+</html>

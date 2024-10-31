@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+  <title>CodePyAI - Python</title>
+</head>
+
+  <body>
+
+    {% include 'Contenido/menuCurso.html' %}
+    
+    
+
+      <div class="numero-leccion">
+            <h1>Lección 3 : Estructuras de control en Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/EngranajeLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>8.Tuplas</h1>
+            <p>En Python, una tupla es una estructura de datos que comparte similitudes con las listas, pero con una característica fundamental: son inmutables. Esto significa que una vez que se crea una tupla, no se pueden modificar sus elementos. Las tuplas se utilizan para almacenar una colección ordenada de elementos de diversos tipos, al igual que las listas, pero se prefieren en situaciones donde se requiere asegurar que los datos no cambien después de su creación. Esta característica las hace útiles en contextos donde la integridad de los datos es crucial, como en la definición de constantes o en la representación de datos que no deben ser alterados, como las coordenadas geográficas.</p>
+           
+            <br>  
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/Ufqh8aoR9hE" frameborder="0" allowfullscreen></iframe>
+            <br><br><br><br>
+
+            <h1>8.1 Creación de Tuplas </h1>
+            <p>Las tuplas en Python se crean utilizando paréntesis () y separando los elementos dentro de la tupla con comas. Esta sintaxis es simple y directa, lo que facilita la creación de tuplas de forma rápida y eficiente. Por ejemplo, una tupla que contenga los días de la semana se puede definir de la siguiente manera: (lunes, martes, miércoles, jueves, viernes, sábado, domingo). Cada elemento de la tupla está separado por comas dentro de los paréntesis, lo que define claramente los límites de la tupla y los elementos que contiene. </p>
+
+
+            <div class="seccion-codigo">
+              <h3>#  Definición de una tupla llamada mi_tupla con 4 elementos.</h3>
+              <p class="variables"> mi_tupla = </p> <p>(<p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="valores">&nbsp5&nbsp</p>)</p><br>
+          </div>
+
+          <br><br>
+          <p>También se pueden crear tuplas sin paréntesis, simplemente separando los elementos con comas:
+          </p>
+          <div class="seccion-codigo">
+            <h3># Otra forma de definir una tupla</h3>
+            <p class="variables"> mi_tupla = </p> <p><p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="valores">&nbsp5&nbsp</p></p><br>
+        </div>
+
+
+
+        <br><br>
+        <h1>8.2 Acceso a los elementos de una tupla</h1>
+
+        <p>
+          Los elementos de una tupla en Python se acceden utilizando índices, al igual que en las listas. Esto significa que cada elemento en una tupla tiene una posición específica, comenzando desde el índice 0 para el primer elemento, 1 para el segundo elemento, y así sucesivamente. Para acceder a un elemento específico de una tupla, simplemente se utiliza su índice dentro de corchetes después del nombre de la tupla. Por ejemplo, si tenemos una tupla llamada mi_tupla que contiene los elementos (1, 2, 3, 4, 5), podemos acceder al tercer elemento (que es 3) utilizando mi_tupla[2], ya que los índices en Python comienzan desde 0. </p>
+
+          <div class="seccion-codigo">
+            <p class="variables"> mi_tupla = </p> <p>(<p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="valores">&nbsp5&nbsp</p>)</p><br>
+            <p class="funcion" > print </p> <p>( mi_tupla&nbsp[&nbsp  <p class="valores">0</p>  ] )</p> <p class="comentarios">&nbsp# Salida: 1</p><br>
+            <p class="funcion" > print </p> <p>( mi_tupla&nbsp[&nbsp  <p class="valores">1</p>  ] )</p> <p class="comentarios">&nbsp# Salida: 2</p><br>
+          </div>
+
+        </div>
+
+        <br><br>
+        <h1>8.3 Métodos de las Tuplas</h1>
+        <p>Las tuplas en Python se distinguen por ser estructuras de datos inmutables, lo que significa que una vez creadas, no pueden modificarse. Esta característica limita el conjunto de métodos disponibles en comparación con las listas, que son mutables. Sin embargo, las tuplas aún proporcionan algunos métodos útiles para operaciones como contar ocurrencias de elementos y encontrar el índice de un valor específico dentro de la tupla. Aunque son menos versátiles en términos de manipulación directa, las tuplas son valiosas por su estabilidad y garantía de que los datos no cambiarán después de su creación, lo que las hace ideales para situaciones donde la integridad de los datos es primordial.
+        </p>
+
+
+
+        <h1>count(valor):</h1>
+        <p>Devuelve el número de veces que aparece un valor en la tupla.</p>
+
+        <div class="seccion-codigo">
+          <p class="variables"> mi_tupla = </p> <p>(<p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="valores">&nbsp5&nbsp</p>)</p><br>
+          <p class="funcion" > print </p> <p>( mi_tupla.count&nbsp(&nbsp  <p class="valores">2</p>  ) )</p> <p class="comentarios">&nbsp# Salida: 3</p><br>
+        </div>
+
+        <br><br>
+        <h1>index(valor):</h1>
+        <p>Devuelve el índice de la primera aparición del valor especificado en la tupla..</p>
+
+
+        <div class="seccion-codigo">
+          <p class="variables"> mi_tupla = </p> <p>(<p class="valores">&nbsp1&nbsp</p>,<p class="valores">&nbsp2&nbsp</p>,<p class="valores">&nbsp3&nbsp</p>, <p class="valores">&nbsp5&nbsp</p>)</p><br>
+          <p class="funcion" > print </p> <p>( mi_tupla.index&nbsp(&nbsp  <p class="valores">3</p>  ) )</p> <p class="comentarios">&nbsp# Salida: 2</p><br>
+        </div>
+
+      </section>
+
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+
+
+
+
+
+  </body>
+</html>

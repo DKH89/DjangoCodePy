@@ -1,0 +1,486 @@
+
+
+body {
+    background-image: url('../imagenes/Fondo16.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    font-family: Studio-Feixen-Sans, Arial;
+}
+
+header {
+    position: fixed;  
+    top: 0;
+    left: 0 ;
+    width: 100%;    
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    padding: 28px 20px;
+    z-index: 10;
+    background-color: #07153ae7;
+}
+
+
+header .logo {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition: 1.5s;
+    text-decoration: none;
+    margin-top: 0.3%;
+}
+
+
+header.abajo{
+    background:#0e0048 ;
+    padding: 15px 20px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header ul {
+
+    position: relative;
+    display: flex ;
+    justify-content: center;
+    align-items: center ;
+
+}
+
+header ul li {
+    list-style: none;
+    color: white;
+}
+
+header ul li .boton {
+    border: 2px solid #9ba3ab;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px; 
+}
+
+.boton:hover {
+    border: 2px solid #03ef62;
+}
+
+
+header ul li a {
+    position: relative;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.7s;
+}
+
+
+header ul li a:hover {
+    background-color: #213147;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+
+
+/* Estilos para el menú desplegable */
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: -1;
+    margin-top: 1.7%;
+    margin-left: 0.5%;
+}
+.menu-desplegable a {
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+}
+.menu-desplegable a:hover {
+    background-color: #f1f1f1;
+}
+.menu-boton:hover .menu-desplegable {
+    display: block;
+}
+
+
+.cuadrado {
+    margin-top: -16px;
+    height: 20vh;
+    width: 100vw;
+    background-image: url(../Imagenes/Montain2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    margin-left: -100px;
+}
+
+.cuadrado h1 {
+    color: white;
+    text-align: center;
+    padding: 55px;
+    font-size: 30px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 13px 25px;
+    background-color: #5602f3;
+    font-size: 17px;
+    color: #ffffff;
+    border-radius: 15px;
+    text-transform: capitalize;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.btn-1:hover {
+    background-color: #E95F6F;
+}
+
+.general-card {
+    flex: 0 0 calc(33.33% - 30px);
+    margin: 0 20px 20px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+.general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: -140px;
+}
+
+
+
+.general-card img {
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+
+
+.general-card h3 {
+    font-size: 18px;
+    color: #12114D;
+    margin-bottom: 15px;
+}
+
+
+
+.general-card p {
+    font-size: 16px;
+    color: #656875;
+}
+
+.general-2 {
+    width: 30%;
+    margin: 0 35px;
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 50px;
+    color: #12114D;
+    margin: 0px 0 0px 40px;
+}
+
+.cuadrado-2 h1 {
+    color: white;
+    text-align: center;
+    padding: 55px;
+    font-size: 30px;
+}
+
+.titulitos h1 {
+    color: white;
+    text-align: center;
+    padding: 55px;
+    font-size: 50px;
+}
+
+.Info-1 p {
+    color: white;
+    text-align: center;
+    padding: 55px;
+    font-size: 20px;
+    margin-top: -80px;
+}
+
+.titulitos p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -50px;
+}
+
+.nosotrosA {
+    margin: 0px 0 0px -10px;
+}
+
+
+
+.general-2 p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 35px;
+    margin: 20px 0 20px 40px;
+}
+
+video {
+    margin-left: 230px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 13px 25px;
+    background-color: #5602f3;
+    font-size: 17px;
+    color: #ffffff;
+    border-radius: 15px;
+    text-transform: capitalize;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.btn-1:hover {
+    background-color: #E95F6F;
+}
+
+.general {
+    padding: 100px 0;
+    display: flex;
+}
+
+.general-1 {
+    width: 70%;
+    display: flex;
+}
+
+
+.general-card img {
+    margin-bottom: 25px;
+    width: 300px;
+}
+
+
+.general-card h3 {
+    font-size: 25px;
+    color: #12114D;
+    margin-bottom: 15px;
+}
+
+
+.general-card p {
+    font-size: 18px;
+    color: #000000;
+    line-height: 30px;
+}
+
+.general-2 {
+    width: 30%;
+    margin: 0 35px;
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 50px;
+    color: #12114D;
+    margin: 0px 0 0px 40px;
+}
+
+
+
+.nosotrosA {
+    margin: 0px 0 0px -10px;
+}
+
+
+
+.general-2 p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 35px;
+    margin: 20px 0 20px 40px;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 13px 25px;
+    background-color: #5602f3;
+    font-size: 17px;
+    color: #ffffff;
+    border-radius: 15px;
+    text-transform: capitalize;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.btn-2:hover {
+    background-color: #E95F6F;
+    color: #ffffff;
+}
+
+.bg-1 {
+    width: 33%;
+    height: 700px;
+    background-image: url(../Imagenes/ArteVisual-1.PNG);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-2 {
+    width: 33%;
+    height: 400px;
+    background-image: url(../Imagenes/ArteVisual-2.PNG);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-3 {
+    width: 33%;
+    height: 400px;
+    background-image: url(../Imagenes/ArteVisual-3.PNG);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.information {
+    padding: 100px 0;
+    background-color: #F5F9FC;
+    text-align: center;
+}
+
+.information-content {
+    margin-top: 70px;
+    display: flex;
+}
+
+.information-1 {
+    margin: 0 25px;
+}
+
+.information-1 h3 {
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #12114D;
+    margin-bottom: 15px;
+}
+
+.information-1 p {
+    font-size: 16px;
+    color: #656875;
+    margin-bottom: 5px;
+}
+
+.general-2 p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 35px;
+    margin: 20px 0 20px 40px;
+}
+
+
+
+
+.footer {
+    background-color: #000000;
+    padding: 20px 0;
+    margin-left: -5%;
+    margin-bottom: -100px;
+    padding-top: 50px;
+    width: 105.5%;
+}
+
+.footer-row{
+    display: flex;
+}
+
+.footer-links{
+    width: 25%;
+    padding: 0 30px;
+    margin-left: 100px;
+    margin-top: -1%;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle; 
+    margin-left: 14%;
+}
+
+
+.footer-links p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    float: left;
+    margin-left: 300px;
+}
+
+
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #BBBBBB;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 6px;
+}
+
+.social-link a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    margin-left: 18%;
+    margin-right: -15%;
+}
+
+
+.social-link a:last-child {
+    margin-right: 15%; 
+}
+.social-link a:hover {
+
+    background-color: #00C3FF;
+}

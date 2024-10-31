@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+      <div class="numero-leccion">
+        <h1 style="margin-top:2.7%">Lección 6 : Operadores en Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/LogoOperadores.png" style="margin-left:25%;margin-top:-80px"/>
+            </div>   
+      </div>
+
+       
+    
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>18.Operadores de Asignación</h1>
+            <p>
+              Los operadores de asignación en Python son esenciales para asignar valores a variables. Además de la asignación simple, donde un valor se asigna directamente a una variable mediante el operador =, Python proporciona operadores de asignación compuesta. Estos operadores permiten combinar una operación aritmética con la asignación, lo que proporciona una forma concisa y legible de actualizar el valor de una variable en función de su valor actual y otro valor. Esta funcionalidad no solo simplifica el código, sino que también puede mejorar la eficiencia al evitar la duplicación de cálculos innecesarios. </p>
+           
+              <br><br>
+              <iframe width="700" height="400" style="margin-left:19%"src="https://www.youtube.com/embed/UbGe_9vyCmM" frameborder="0" allowfullscreen></iframe>
+              <br><br><br><br><br>
+
+
+              <h1>18.1 Operador de asignación simple (=)</h1>
+              <p> Se utiliza para asignar un valor a una variable. </p>
+
+
+
+              <div class="seccion-codigo">
+                <h3># Se asigna a la variable x el valor de 10</h3>
+                 <br>
+                <p class="variables"> x = </p> <p class="valores">10</p><br>
+            </div>
+
+            <br><br>
+            <h1>18.2 Operadores de asignación compuesta</h1>
+            <p>Estos operadores combinan una operación aritmética con la asignación. Algunos ejemplos comunes incluyen:</p>
+
+    
+            <b> ● "+=" : Para sumar y asignar.          </b> <br> <br>
+            <div class="seccion-codigo">
+              <h3> # Equivalente a: x = x + 5 </h3>
+               <br>
+              <p class="variables"> x += </p> <p class="valores">5</p><br>
+          </div>
+
+          <br><br>
+
+          <b> ● "-=" : Para restar y asignar.          </b> <br> <br>
+          <div class="seccion-codigo">
+            <h3> # Equivalente a: y = y - 3 </h3>
+             <br>
+            <p class="variables"> y -= </p> <p class="valores">3</p><br>
+        </div>
+
+        <br><br>
+
+        <b> ● "*=" : Para multiplicar y asignar.          </b> <br> <br>
+        <div class="seccion-codigo">
+          <h3> # Equivalente a: z = z * 2 </h3>
+           <br>
+          <p class="variables"> z *= </p> <p class="valores">2</p><br>
+      </div>
+
+
+      <br><br>
+
+      <b> ● "/=" : Para dividir y asignar.          </b> <br> <br>
+      <div class="seccion-codigo">
+        <h3># Equivalente a: w = w / 4 </h3>
+         <br>
+        <p class="variables"> w /= </p> <p class="valores">4</p><br>
+    </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+      </section>
+
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/soporteper.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfiladmin.css' %}">
+
+
+</head>
+<body>
+
+
+
+    {% if usuario.id_usuario is none%}
+    <script>
+        alert("Por favor, inicie sesión para acceder a más características de la página web.");
+        window.location.href = "http://127.0.0.1:8000/Login/"
+    </script>
+    {% endif %}
+
+
+    <div class="menu">
+        <div class="user-profile">
+           <h2 class="NomUsuario" style="color: white;">{{ usuario.nombre_usuario }}</h2><br>
+           <img src="../static/imagenes/Administrador.png" alt="Imagen de perfil" onclick="window.location.href='http://127.0.0.1:8000/'" style="cursor:pointer"> <br><br><br>
+
+           </a>
+            <hr><br>
+        </div>
+        
+        <ul class="menu-list">
+            <li>
+                <img src="../static/imagenes/usuario.png" alt="Opción 1">
+                <a href="http://127.0.0.1:8000/PerfilAdmin/">Usuarios</a>
+            </li>
+
+            <li>
+                <img src="../static/imagenes/Soporte.png"   alt="Opción 1">
+                <a href="http://127.0.0.1:8000/SoporteAdmin/">Soporte</a>
+            </li>
+       
+         
+        </ul>
+ 
+    </div>
+
+    <h1 class="titulos" style="margin-top:7%">Usuarios Registrados</h1>
+
+
+        
+    <table style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">ID usuario</th>
+                <th style="border: 1px solid black; padding: 8px;">Nombre de Usuario</th>
+                <th style="border: 1px solid black; padding: 8px;">Correo Electrónico</th>
+                <th style="border: 1px solid black; padding: 8px;">Contraseña</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuariosall %}
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{{ usuario.id }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ usuario.nombre_usuario }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ usuario.correo_usuario }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ usuario.contrasena_usuario }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+
+
+
+    <h1 class="titulos" style="margin-top:7%;margin-left:27%">Formulario de Soporte Técnico</h1>
+
+    <div class="contenedorkey">
+        <div class="contenedor-principal">
+            <div class="contenedor-1">
+                <div class="contenidop" style="width:400px">
+                    <h2 class="items">Modificación de datos</h2>
+                    <p>Por favor, ingrese la ID del usuario que desea buscar y posteriormente modificar. Le recordamos que el uso inapropiado de este perfil puede resultar en sanciones disciplinarias.</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+                <div class="contenidod" style="margin-left:-4%;margin-top:5%">
+                    <h2 class="items">Buscar un usuario</h2><br><br>
+                    <div class="input-group">
+                        <div class="input-item"><br>
+                            <form onsubmit="return enviarNombreUsuario(event)" method="POST">
+                                <p>Filtro de usuario por ID</p><br>
+                                <input type="textG" id="idusuario" name="idusuario" placeholder="Digite la ID del usuario a buscar" value="{{usuariosbuscar.id_usuario}}"><br><br>
+                                <button type="submit">Buscar Usuario</button>
+                                {% csrf_token %}
+                            </form><br><br><br><br>
+                            <hr><br><br>
+                            <h2 class="items">Editar Datos Personales</h2><br><br><br>
+                            <form onsubmit="return ActualizarDatos(event)" method="POST">
+                                <p>Nombre de usuario</p><br>
+                                <input type="textG" id="nombreusuario" name="nombreusuario" placeholder="Nuevo nombre de usuario" value="{{usuariosbuscar.nombre_usuario}}"><br><br>
+                                <p>Correo electrónico</p><br>
+                                <input type="textG" id="correousuario" name="correousuario" placeholder="Nuevo correo electrónico" value="{{usuariosbuscar.correo_usuario}}"><br><br>
+                                <p>Contraseña</p><br>
+                                <input type="textG" id="contrasenausuario" name="contrasenausuario" placeholder="Nueva contraseña" value="{{usuariosbuscar.contrasena_usuario}}"><br><br>
+                                <button type="submit">Guardar Cambios</button>
+                                {% csrf_token %}
+                            </form>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div><br><br><br><br>
+    </div>
+</body>
+
+<script>
+    if (window.location.href !== "http://127.0.0.1:8000/PerfilAdmin/") {
+        window.location.href = "http://127.0.0.1:8000/PerfilAdmin/";
+    }
+</script>
+
+<script>
+    function enviarNombreUsuario(event) {
+        event.preventDefault();
+        var idUsuario = document.getElementById("idusuario").value;
+        if (idUsuario.trim() !== "") {
+            alert("Se ha buscado al usuario con ID " + idUsuario + ". Por favor, modifique los datos del usuario en el formulario de abajo.");
+            window.location.href = "http://127.0.0.1:8000/CargarUsuario/" + encodeURIComponent(idUsuario);
+        } else {
+            alert("El campo de ID del usuario no puede estar vacío.");
+        }
+    }
+
+    function ActualizarDatos(event) {
+        event.preventDefault();
+        var idUsuario = document.getElementById("idusuario").value;
+        var nombreusuario = document.getElementById("nombreusuario").value;
+        var correousuario = document.getElementById("correousuario").value;
+        var contrasenausuario = document.getElementById("contrasenausuario").value;
+
+
+        if (nombreusuario.trim() !== "" && correousuario.trim() !== "" && contrasenausuario.trim() !== "") {
+            alert("Se han actualizado los datos del usuario correctamente.");
+            window.location.href = "http://127.0.0.1:8000/ActualizarDatosUsuario/"+encodeURIComponent(idUsuario)+"/"+encodeURIComponent(nombreusuario)+"/"+encodeURIComponent(correousuario)+"/"+encodeURIComponent(contrasenausuario);
+        } 
+
+        else {
+            alert("Todos los campos deben estar completo para poder actualizar los datos del usuario.");
+        }
+    }
+
+
+</script>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePyAI</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+
+    {% if mensaje == "Credenciales incorrectas o el usuario no existe" %}
+        <script>
+            alert("Credenciales incorrectas o el usuario no existe");
+            window.location.href = "http://127.0.0.1:8000/Login/"
+
+        </script>
+    {% endif %}
+
+
+    {% if mensaje == "Usuario creado exitosamente" %}
+        <script>
+            alert("Usuario creado exitosamente");
+            window.location.href = "http://127.0.0.1:8000/Login/"
+        </script>
+    {% endif %}
+
+
+
+
+    {% include 'Contenido/menu.html' %}
+        <br><br>       <br><br>
+
+    <div class="menu-container">
+        <div class="menu-login">
+            <div class="imagen-logo">
+                <img src="../static/imagenes/CodePyAI23.png" alt="Imagen 2">
+            </div>
+            <br>  <br>  <br> <br>
+            <div class="textoinicial">
+                <p>Inicio de Sesión</p>
+                <p style="font-size:18px;margin-top:10px;  letter-spacing: 1px;">Por favor ingrese sus credenciales</p>
+            </div>
+            <br>
+
+            <form id="registro-form" onsubmit="return validarFormulario()">
+
+            <div class="encabezado">
+                <div class="marco">
+                    <p>Correo</p>
+                    <input type="email" id="correo" placeholder="Por favor ingrese su correo electrónico correctamente" required>
+                </div>
+                <br><br>
+                <div class="marco">
+                    <p>Clave</p>
+                    <input type="password" id="clave" placeholder="Por favor ingrese su contraseña correctamente" required>
+                </div>
+                <div class="botones">
+                    <a style="text-align:center"  onclick="return validarFormulario()">Inicia Sesión</a>
+                </div>
+                
+                
+            </form> 
+
+                
+            </div>
+            <div class="infoextra">
+                <p>¿No tienes una cuenta?  </p>  <a href="http://127.0.0.1:8000/Registro/">Registrese</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validarFormulario(event) {
+            var correo = document.getElementById('correo').value;
+            var clave = document.getElementById('clave').value;
+    
+            if (correo === '' || clave === '') {
+                alert('Por favor complete todos los campos.');
+                return false;
+            }
+
+            else{
+                window.location.href = "http://127.0.0.1:8000/IniciarSesion/" + correo + "/" + clave;
+            }
+            return true;
+        }
+    </script>
+    
+</body>
+</html>

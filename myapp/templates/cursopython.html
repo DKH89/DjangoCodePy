@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+
+    <title>CodePyAI - Python</title>
+
+  </head>
+
+
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+    {% if usuario.id_usuario is none%}
+    <script>
+        alert("Por favor, inicie sesión para acceder a más características de la página web.");
+        window.location.href = "http://127.0.0.1:8000/Login/"
+    </script>
+    {% endif %}
+
+    
+
+      <div class="numero-leccion">
+            <h1>Lección 1 : Introduccion al Lenguaje De Programación Python</h1>
+            <div class="imagen-izq">
+                <img src="../static/imagenes/Leccion1.png"/>
+            </div>
+      </div>
+
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>1. Acerca de Python</h1>
+            <p>
+                Python es un lenguaje de programación que ha logrado un gran reconocimiento y adopción en el mundo de la informática y la tecnología en general. Su popularidad radica en varios aspectos clave que lo hacen único y altamente deseable tanto para principiantes como para programadores experimentados.
+
+                Una de las características más destacadas de Python es su sintaxis simple y legible. Su diseño se centra en la claridad y la facilidad de comprensión del código, lo que lo convierte en un lenguaje accesible incluso para aquellos que están comenzando en el mundo de la programación. El hecho de que Python utilice una sintaxis limpia, con una menor cantidad de caracteres especiales y una estructura basada en la indentación para definir bloques de código, facilita la lectura y comprensión del código, lo que hace que el proceso de desarrollo sea más eficiente y menos propenso a errores.
+            </p>
+
+            <div class="imagen-contenido">
+                <p class="imagenescontent"><img src="../static/imagenes/pythoncurso.png"/></p>
+            </div>
+
+
+            <h1>1.1 Historia  de Python</h1>
+
+             <p>
+                Python es un lenguaje de programación creado por Guido van Rossum y lanzado por primera vez en 1991. Van Rossum diseñó Python con un enfoque en la legibilidad del código y la sintaxis clara, inspirado en parte por su experiencia con el lenguaje ABC. Inicialmente, Python ganó popularidad en la comunidad de desarrolladores gracias a su facilidad de uso y su capacidad para integrarse con otros lenguajes. A medida que evolucionaba, Python se convirtió en una herramienta poderosa tanto para la programación de scripts como para el desarrollo de aplicaciones complejas. La publicación de la versión 2.0 en 2000 y la posterior adopción de Python por parte de grandes empresas y organizaciones impulsaron su crecimiento exponencial. Con la llegada de Python 3 en 2008, se introdujeron mejoras significativas en el lenguaje, aunque la transición completa de la comunidad de usuarios llevó varios años.
+             </p>
+
+
+    
+             <div class="imagen-contenido2">
+                <p class="imagenescontent"><img src="../static/imagenes/pythoncurso2.png"/></p>
+            </div>
+
+            <h1>1.2 Versiones de Python</h1>
+            <p>
+                Las versiones de Python se identifican por tres números X.Y.Z, donde X representa las grandes versiones (1, 2 y 3) con cambios significativos, como la introducción de Unicode en Python 2 y la separación entre Unicode y datos binarios en Python 3. Y corresponde a versiones importantes que introducen novedades sin romper la compatibilidad, con un ritmo de publicación cada octubre desde Python 3.8. Z indica versiones menores para correcciones de errores y seguridad durante cinco años de mantenimiento, con una publicación inicial cada dos meses y luego solo en forma de código fuente, con una última versión antes de dejar de ser mantenida. No hay planes para Python 4 hasta el momento.
+
+
+
+            </p>
+
+            <div class="imagen-contenido3">
+                <p class="imagenescontent"><img src="../static/imagenes/versionespython.png"/></p>
+            </div>
+                
+
+        </div>
+
+      </section>
+
+
+  
+    
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+
+
+
+
+  </body>
+</html>

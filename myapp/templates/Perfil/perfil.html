@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>CodePyAI - Perfil</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
+
+</head>
+<body>
+
+
+
+    {% if usuario.id_usuario is none%}
+    <script>
+        alert("Por favor, inicie sesión para acceder a más características de la página web.");
+        window.location.href = "http://127.0.0.1:8000/Login/"
+    </script>
+    {% endif %}
+
+
+    <div class="menu">
+        <div class="user-profile">
+           <h2 class="NomUsuario" style="color: white;">{{ usuario.nombre_usuario }}</h2><br>
+           <img src="../static/imagenes/Avatar/{{ infousuario.avatar_usuario }}.jpg" alt="Imagen de perfil" onclick="window.location.href='http://127.0.0.1:8000/'" style="cursor:pointer" class="imagenPerfil"> <br><br><br>
+
+           </a>
+            <hr><br>
+        </div>
+        
+        <ul class="menu-list">
+            <li>
+                <img src="../static/imagenes/usuario.png" alt="Opción 1">
+                <a href="http://127.0.0.1:8000/Perfil/">Perfil</a>
+            </li>
+
+            <li>
+                <img src="../static/imagenes/Certificado.png"   alt="Opción 1">
+                <a href="http://127.0.0.1:8000/Perfil/Progreso">Certificado</a>
+            </li>
+            <li>
+                <img src="../static/imagenes/Avatar.png"  alt="Opción 1">
+                <a href="/AvatarLog" style="margin-left:-10x;">Avatar</a>
+            </li>
+            <li>
+                <img src="../static/imagenes/Soporte.png"  alt="Opción 1">
+                <a href="http://127.0.0.1:8000/Perfil/Soporte" style="margin-left:-10x;">Soporte</a>
+            </li>
+            <br>
+        </ul>
+    </div>
+
+
+    
+    <h1 class="titulos" style="margin-top:7%">Datos Basicos del Perfil</h1>
+
+    <div class="contenedorkey">
+        <div class="contenedor-principal">
+            <div class="contenedor-1">
+                <div class="contenidop">
+                <h2 class="items">Nombre Usuario</h2>
+                <p>Tu nombre de usuario es el que veras en la certificación del curso y en otras secciones.</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+                <h2 class="items">Editar Datos Personales</h2> <br> <br>
+
+                <form onsubmit="return enviarNombreUsuario(event)" method="POST">
+                    <div class="input-group">
+                        <div class="input-item">
+                            <p>Nombre y Apellido</p> <br>
+                            <input type="textG" id="nombreusuario" name="nombreusuario" placeholder="Tu nuevo nombre de usuario" value="{{usuario.nombre_usuario}}">
+                        </div>
+
+                    </div>
+                    <br>
+                    <button type="submit">Guardar Cambios</button>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="contenedor-principal">
+            <div class="contenedor-1">
+                <div class="contenidop">
+                <h2 class="items">Correo Electronico</h2>
+                <p>Tu correo electronico te permitira realizar tickets al soporte tecnico</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+                <h2 class="items">Editar Datos de ingreso</h2> <br> <br>
+
+                <form onsubmit="return enviarCorreoUsuario(event)" method="POST">
+                    <div class="input-group">
+                        <div class="input-item">
+                            <p>Correo Electronico</p> <br>
+                            <input type="textG" id="correoelectronico" name="correoelectronico" placeholder="Tu nuevo Correo Electronico" value="{{usuario.correo_usuario}}">
+                        </div>
+
+                    </div>
+                    <br>
+                    <button type="submit">Guardar Cambios</button>
+                    {% csrf_token %}
+
+                </form>
+            </div>
+        </div>
+        
+
+        <br><br>
+
+        <div class="contenedor-principal">
+            <div class="contenedor-1">
+                <div class="contenidop">
+                <h2 class="items">Contraseña</h2>
+                <p>Esta información es privada y no se compartirá con nadie.Te invitamos a leer la politica de privacidad</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+                <h2 class="items">Editar Datos privados</h2> <br> <br>
+
+                <form onsubmit="return enviarContrasenaUsuario(event)" method="POST">
+                    <div class="input-group">
+                        <div class="input-item">
+                            <p>Contraseña de ingreso</p> <br>
+                            <input type="textG" id="contrasena" name="contrasena" placeholder="Tu nueva contrasena" value="{{usuario.contrasena_usuario}}">
+                        </div>
+
+                    </div>
+                    <br>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+        
+            <br><br>
+        <div class="contenedor-principal">
+            
+            <div class="contenedor-1" style="width:33%">
+                <div class="contenidop">
+                <h2 class="items">Cerrar Cuenta</h2>
+                <p>Esta acción es irreversible , todos tus datos seran borrados y ya no podras acceder a tu cuenta.</p>
+                </div>
+            </div>
+            
+            <div class="contenedor-2">
+
+                <div class="contenidop">
+
+                <h2 class="items">Eliminar Cuenta</h2>
+
+                <form onsubmit="return EliminarUsuario(event)" method="POST">
+                    <div class="input-group">
+                        <div class="input-item">
+                             <input type="hidden" id="correo-usuario" name="correo-usuario" value="<?php echo htmlspecialchars($nombreUsuario); ?>">
+                        </div>
+
+                    </div>
+                    <br>
+                    <button type="submit" style="background-color:red">Eliminar para siempre tu cuenta</button>
+                
+                </form>
+
+            </div>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+    </div>
+
+    
+
+
+    
+</body>
+
+<script>
+    if (window.location.href !== "http://127.0.0.1:8000/Perfil/") {
+        window.location.href = "http://127.0.0.1:8000/Perfil/";
+    }
+</script>
+
+<script>
+    function enviarNombreUsuario(event) {
+        event.preventDefault();
+        var nombreUsuario = document.getElementById("nombreusuario").value;
+        
+        if (nombreUsuario.trim() !== "") {
+            alert("Nombre de usuario actualizado correctamente.");
+            window.location.href = "http://127.0.0.1:8000/PerfilActualizarNombre/" + encodeURIComponent(nombreUsuario);
+        } else {
+            alert("El campo de nombre de usuario no puede estar vacío.");
+        }
+    }
+</script>
+
+<script>
+    function enviarCorreoUsuario(event) {
+        event.preventDefault();
+        var correoUsuario = document.getElementById("correoelectronico").value;
+        
+        if (correoUsuario.trim() !== "") { 
+            alert("Correo electrónico actualizado correctamente.");
+            window.location.href = "http://127.0.0.1:8000/PerfilActualizarCorreo/" + encodeURIComponent(correoUsuario); 
+        } else {
+            alert("El campo de correo electrónico no puede estar vacío.");
+        }
+    }
+</script>
+
+
+<script>
+    function enviarContrasenaUsuario(event) {
+        event.preventDefault();
+        var contrasenaUsuario = document.getElementById("contrasena").value;
+        
+        if (contrasenaUsuario.trim() !== "") { 
+            alert("Contraseña actualizado correctamente.");
+            window.location.href = "http://127.0.0.1:8000/PerfilActualizarContrasena/" + encodeURIComponent(contrasenaUsuario); 
+        } else {
+            alert("El campo de contraseña no puede estar vacío.");
+        }
+    }
+</script>
+
+
+<script>
+    function EliminarUsuario(event) {
+        event.preventDefault();
+        alert("Usuario eliminado correctamente.");
+        window.location.href = "http://127.0.0.1:8000/PerfilEliminarUsuario/" + encodeURIComponent(5); 
+       
+    }
+</script>
+
+
+
+
+</html>

@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>CodePyAI  -  Python</title>
+  </head>
+  <body>
+
+    {% include 'Contenido/menuCurso.html' %}
+
+
+      <div class="numero-leccion">
+            <h1>Lección 3 : Estructuras de control en Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/EngranajeLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>6.Estructuras Ciclicas</h1>
+           
+            <p>Las estructuras cíclicas, conocidas comúnmente como bucles, son esenciales en la programación para repetir la ejecución de un conjunto de instrucciones mientras ciertas condiciones se mantengan válidas. En Python, estas estructuras se implementan principalmente a través de los bucles for y while, que ofrecen distintas formas de controlar la repetición de código en función de la situación. Estos bucles son fundamentales para automatizar tareas repetitivas y para procesar colecciones de datos de manera eficiente, proporcionando así una herramienta poderosa para el desarrollo de programas en Python.
+
+              <br>  <br>  <br>
+              <iframe width="600" height="400" src="https://www.youtube.com/embed/oDQJiRNzt98" frameborder="0" allowfullscreen></iframe>
+              <br><br>
+
+            <h1>6.1 Bucle For</h1>
+
+            <p>
+              El bucle for es una estructura en Python que permite iterar sobre una secuencia de elementos, como una lista o una tupla, y ejecutar un bloque de código para cada elemento en esa secuencia. Esta estructura proporciona una forma eficiente y elegante de procesar colecciones de datos, ya que el bucle itera automáticamente sobre cada elemento en la secuencia, permitiendo realizar operaciones específicas en cada uno de ellos. El bucle for es especialmente útil cuando se necesita realizar la misma operación en todos los elementos de una colección, lo que lo convierte en una herramienta esencial en el desarrollo de programas en Python.
+
+            <p>
+
+              <div class="seccion-codigo">
+                <h3># Bucle for para iterar sobre una secuencia de elementos y ejecutar un bloque de código para cada uno.</h3><br>
+                
+                <p class="tipobooleano">for</p>
+                <p>elemento in</p>&nbsp;<p class="tipobooleano">secuencia</p><p>&nbsp:</p><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion"> # Bloque de código que se ejecuta para cada elemento en la secuencia</p><br>
+            </div>
+
+            <br><br>
+            <p>Ejemplo de aplicación:</p>
+            <div class="seccion-codigo">
+              <h3># Bucle for para iterar sobre una secuencia de elementos y ejecutar un bloque de código para cada uno.</h3><br>
+              
+              <p class="tipobooleano">for</p>
+              <p>numero <p class="tipobooleano">&nbspin</p></p>&nbsp;<p class="tipobooleano">range<p>(<p class="valores">1</p>, <p class="valores">6</p>)</p><p>&nbsp:</p><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print</p>&nbsp;<p>(numero)</p><br>
+
+
+              <h3># Imprime los numeros del 1 al 5.</h3><br>
+
+          </div>
+            <br><br>
+          <h1>6.2 Bucle While</h1>
+
+          <p>
+            El bucle while es una estructura de control en Python que se emplea para ejecutar un bloque de código repetidamente mientras una condición específica se mantenga verdadera. Esto significa que el bloque de código dentro del bucle se ejecutará una y otra vez hasta que la condición se vuelva falsa. Es importante tener en cuenta que la condición se evalúa antes de cada ejecución del bloque de código, por lo que si la condición ya es falsa al inicio, el bloque de código no se ejecutará ni una sola vez. El bucle while es útil cuando no se sabe cuántas veces se debe ejecutar el bloque de código de antemano, sino que se basa en la evaluación continua de una condición. </p>
+
+            <div class="seccion-codigo">
+              <h3># Bucle while para ejecutar un bloque de código mientras la condición sea verdadera.</h3><br>
+              
+              <p class="tipobooleano">while</p>
+              <p>condicion:</p><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion"> # Bloque de código que se ejecuta mientras la condición sea verdadera</p><br>
+          </div>
+
+          <br><br>
+          <p>Ejemplo de aplicación:</p>
+
+          <div class="seccion-codigo">
+            <h3># Ejemplo de un ciclo while que cuenta hasta 5</h3><br>
+            
+            <p class="tipobooleano">while</p>
+            <p>contador &lt;= 5:</p><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<p class="funcion">print<p>&nbsp(contador)</p></p><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<p >contador += 1</p><br>
+        </div>
+        
+      </p>
+            </p>
+        </div>
+
+      </section>
+
+      
+      <div class="chat-icon" id="chatIcon">
+        <img src="../static/imagenes/LogoIAfinal.jpg" alt="Chat Icon">
+     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h2>Asistente Virtual</h2>
+            <button id="closeChat">&times;</button>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <p>Aqui puedes preguntarle a nuestra inteligencia artificial integra alguna pregunta que tengas acerca de las lecciones que estas viendo en el curso.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribe aquí...">
+            <button id="sendMessage">Enviar</button>
+
+        </div>
+    </div>
+
+  
+
+  </body>
+</html>

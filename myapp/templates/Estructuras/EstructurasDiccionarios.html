@@ -1,0 +1,215 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/cursoPython.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'javascript/forcodigo.js' %}"></script>
+    <script src="{% static 'javascript/copilador.js' %}"></script>
+    {% csrf_token %}
+
+
+    <title>CodePyAI  -  Python</title>
+  </head>
+  
+  <body>
+    {% include 'Contenido/menuCurso.html' %}
+
+  
+
+      <div class="numero-leccion">
+            <h1>Lección 3 : Estructuras de control en Python</h1>
+            <div class="imagen-izq">
+              <img src="../static/imagenes/EngranajeLogo.png" style="margin-left:19%"/>
+          </div>
+      </div>
+
+
+      <section class="Lecciones">
+
+        <div class="contenido">
+
+            <h1>9.Diccionarios</h1>
+
+            <p>En Python, los diccionarios son estructuras de datos fundamentales que permiten almacenar pares clave-valor. A diferencia de las listas, que se indexan mediante números enteros, los diccionarios se indexan mediante claves, las cuales pueden ser de cualquier tipo inmutable, como cadenas, números o tuplas. Debido a esta capacidad de indexación personalizada, los diccionarios son altamente versátiles y se utilizan ampliamente en Python. Su capacidad para almacenar y recuperar datos de manera eficiente los convierte en una herramienta indispensable para el manejo y organización de datos en diversos tipos de aplicaciones.
+
+              <br>   <br>   <br>   
+              <iframe width="600" height="400" src="https://www.youtube.com/embed/2OmgHl8lp0I" frameborder="0" allowfullscreen></iframe>
+              <br><br><br>
+            
+            <h1>9.1 Creación del diccionario</h1>
+            <p>
+              Los diccionarios en Python se crean utilizando llaves {} y especificando los pares clave-valor separados por comas. Esta estructura permite una representación clara y concisa de la relación entre las claves y sus respectivos valores. Por ejemplo, podemos definir un diccionario que represente información sobre una persona con claves como "nombre", "edad" y "ciudad", y asignar los valores correspondientes a cada una de ellas. </p>
+
+            </p>
+            <div class="seccion-codigo">
+              <h3># Definición de un diccionario llamado mi_diccionario con tres pares clave-valor.</h3>
+              <p class="variables">mi_diccionario = </p>
+              <p>{</p>
+              <p class="textocodigo">"nombre"</p><p>:</p><p class="textocodigo">"Juan"</p><p>,</p>
+              <p class="textocodigo">"edad"</p><p>:</p><p class="valores">30</p><p>,</p>
+              <p class="textocodigo">"ciudad"</p><p>:</p><p class="textocodigo">"Madrid"</p>
+              <p>}</p>
+          </div>
+          
+          <br><br>
+          <h1>9.2 Acceso a Elementos de un diccionario</h1>
+          <p>Los elementos de un diccionario en Python se acceden mediante sus claves. Cada elemento en un diccionario está asociado a una clave única, y esta clave se utiliza para recuperar el valor correspondiente almacenado en el diccionario. Por ejemplo, si tenemos un diccionario que contiene información sobre una persona con claves como "nombre", "edad" y "ciudad", podemos acceder al valor del nombre utilizando la clave "nombre".</p>
+
+          <div class="seccion-codigo">
+            <p class="funcion" > print </p> <p>( mi_diccionario&nbsp[&nbsp  <p class="nombre">0</p>  ] )</p> <p class="comentarios">&nbsp# Salida: Juan</p><br>
+            <p class="funcion" > print </p> <p>( mi_diccionario&nbsp[&nbsp  <p class="edad">1</p>  ] )</p> <p class="comentarios">&nbsp# Salida: 30</p><br>
+          </div>
+
+        </div>
+        <br><br>
+        <p>Si se intenta acceder a una clave que no está presente en el diccionario, se producirá un error KeyError. Para evitar este error, se puede utilizar el método get(), que devuelve None si la clave no está presente:
+        </p>
+
+        <div class="seccion-codigo">
+          <p class="funcion" > print </p> <p>( mi_diccionario.get&nbsp[&nbsp  <p class="apellido">0</p>  ] )</p> <p class="comentarios">&nbsp# Salida: none</p><br>
+        </div>
+
+        <br><br>
+        <h1>9.3 Modificación de Elementos del Diccionario        </h1>
+        <p>Los elementos de un diccionario en Python pueden modificarse de manera dinámica asignando nuevos valores a las claves existentes o añadiendo nuevos pares clave-valor según sea necesario. Esto proporciona una gran flexibilidad en la manipulación de datos dentro del diccionario. Por ejemplo, si queremos actualizar la edad de una persona en un diccionario que contiene información sobre ella, simplemente podemos asignar un nuevo valor a la clave "edad". Del mismo modo, si queremos añadir información adicional, como el apellido de la persona, podemos hacerlo fácilmente añadiendo un nuevo par clave-valor al diccionario.</p>
+
+
+        <div class="seccion-codigo">
+          <p class="variables">mi_diccionario[&nbsp<p class="textocodigo">"edad"</p>&nbsp] = </p><p class="valores">35</p><p class="comentarios">&nbsp &nbsp  # Modificar el valor de la clave "edad"</p><br>
+          <p class="variables">mi_diccionario[&nbsp<p class="textocodigo">"apellido"</p>&nbsp] = </p><p class="textocodigo">"García"</p><p class="comentarios"> &nbsp &nbsp  # Añadir un nuevo par clave-valor</p>
+      </div>
+      
+      
+      <br>   <br>
+      <h1>9.4 Ejercicio de Practica</h1>
+      <p>En esta sección, encontrarás un ejercicio práctico en Python diseñado para fortalecer tus habilidades de programación. 
+        El ejercicio incluye requisitos funcionales , una descripción detallada del problema a
+         resolver, el tiempo estimado para completarlo y una muestra de su ejecución. Sigue las instrucciones proporcionadas 
+         para abordar el ejercicio y profundizar tu comprensión de Python <button id="mostrarImagenBtn"> Mostrar Ejercicio</button></p>  
+
+
+      <p class="descripcion-ejercicio" style="display: none;">
+
+                Descripción
+                El ejercicio consiste en crear un sistema básico de gestión de inventario utilizando Python. Este sistema debe permitir al usuario:
+
+                Agregar productos: Ingresar el nombre y la cantidad de diversos productos para añadirlos al inventario.
+                Visualizar el inventario: Mostrar una lista completa de todos los productos en el inventario junto con sus respectivas cantidades.
+                Actualizar el inventario: Modificar la cantidad de un producto específico en el inventario.
+                Eliminar productos: Remover un producto del inventario.
+                Para implementar este sistema, se sugiere utilizar un diccionario en Python para almacenar los productos y sus cantidades. Además, se deben emplear estructuras condicionales (como if, else) para controlar el flujo del programa y estructuras cíclicas (como while o for) para iterar sobre el diccionario y mostrar los productos.
+
+                Requisitos
+                Ingreso de Productos:
+                El usuario debe poder ingresar el nombre y la cantidad de varios productos para añadir al inventario.
+                Visualización de Inventario:
+                El usuario debe poder ver una lista de todos los productos en el inventario junto con sus cantidades.
+                Actualización de Inventario:
+                El usuario debe poder actualizar la cantidad de un producto específico en el inventario.
+                Eliminación de Productos:
+                El usuario debe poder eliminar un producto del inventario.
+                Tiempo Estimado: 20 minutos
+
+                Muestra de Ejecución
+                Gestión de Inventario
+                1. Agregar Producto
+                2. Ver Inventario
+                3. Actualizar Cantidad de Producto
+                4. Eliminar Producto
+                5. Salir
+                Elija una opción: 1
+                Ingrese el nombre del producto: Manzanas
+                Ingrese la cantidad del producto: 10
+                Producto "Manzanas" agregado con cantidad 10.
+        </p>
+
+
+
+  
+      <div id="myModal" class="modal">
+          <span class="close" id="closeModal">&times;</span>
+          <img class="modal-content" id="imgModal" src="{% static 'imagenes/Ejercicio2.png' %}" alt="Chat Icon">
+      </div>
+             
+      <div class="practica-conocimiento">
+        <h2 class="titulo-copilador">Prueba tu Codigo en este Espacio</h2>
+        <div id="codigoEstudiante" contenteditable="true" class="codigo-input" placeholder="Escribe tu código aquí..."></div>
+        
+        <!-- Botón Enviar Código -->
+        <div class="button-container">
+          <button id="enviarCodigo" class="btn-enviar">
+              <i class="fas fa-paper-plane"></i> Ver Correciones
+          </button>
+      
+          <button id="compilarCodigo" class="btn-compilar">
+              <i class="fas fa-play"></i> Compilar
+          </button>
+      </div>
+
+    </div>
+
+
+      </section>
+
+      <div id="modalCorrecciones" class="modal2">
+        <div class="modal-content2">
+          <span class="close">&times;</span>
+          <h2>Correcciones del Ejercicio</h2>
+          <div id="correccionesTexto"></div>
+        </div>
+      </div>
+      
+    
+
+
+
+    <h1 id="CorreccionesEstado">e</h1>
+
+
+  </body>
+  <script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById('mostrarImagenBtn');
+    var span = document.getElementById('closeModal');
+
+    btn.onclick = function() {
+        modal.style.display = 'flex'; 
+    }
+
+    span.onclick = function() {
+        modal.style.display = 'none'; 
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none'; 
+        }
+    }
+</script>
+
+<script>
+    
+  document.getElementById('compilarCodigo').onclick = function() {
+    // Verificar si el texto de las correcciones contiene la palabra "APROBADO"
+    var correccionesTexto = document.getElementById('CorreccionesEstado').innerText; // Cambiar 'correccionesEstado' a 'CorreccionesEstado'
+
+    // Comprobar si el texto es "APROBADO" (sin importar mayúsculas o minúsculas)
+    if (correccionesTexto.toUpperCase() === 'APROBADO') {
+        // Si está aprobado, proceder a compilar el código
+        var codigo = document.getElementById('codigoEstudiante').innerText;
+        var codigoCodificado = encodeURIComponent(codigo);
+        var urlCompilador = `https://paiza.io/es/projects/new?language=python3&source_code=${codigoCodificado}`;
+        window.open(urlCompilador, '_blank');
+    } else {
+        // Si no está aprobado, mostrar un mensaje de error
+        alert('Debes corregir el código antes de compilar.');
+    }
+};
+
+  </script>
+</html>

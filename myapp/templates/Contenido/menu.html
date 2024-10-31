@@ -1,0 +1,29 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <header>
+        <a href="http://127.0.0.1:8000/" class="logo">CODEPYAI</a>
+        <nav>
+            <ul>
+                <li><a class="active" href="http://127.0.0.1:8000/Nosotros/">Nosotros</a></li>
+                <li><a href="http://127.0.0.1:8000/CursoPython/">Cursos</a></li>
+                <li><a href="http://127.0.0.1:8000/Soporte/">Soporte</a></li>
+                <li><a href="http://127.0.0.1:8000/ChatBot/">ChatBot</a></li>
+                <li><a href="http://127.0.0.1:8000/Recursos/">Recursos</a></li>
+                <li><a href="http://127.0.0.1:8000/Noticias/">Noticias</a></li>
+                <li class="menu-boton">
+                    <a href="{% if usuario %}#perfil-menu{% else %}http://127.0.0.1:8000/Login/{% endif %}" class="boton">
+                        {% if usuario %}{{ usuario.nombre_usuario }}{% else %}Inicia sesión{% endif %}
+                    </a>
+                    {% if usuario %}
+                    <div class="menu-desplegable" id="perfil-menu">
+                        <a href="/Perfil">Ver perfil</a>
+                        <a href="http://127.0.0.1:8000/Desloguearse/">Desloguearse</a>
+                    </div>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
+

@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePyAI</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chatbot2.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    
+    {% include 'Contenido/menu.html' %}
+
+    <br><br><br><br><br><br>
+    <div class="cuadrado">
+        <h1>Acerca de la Inteligencia Artificial Integrada</h1>
+    </div>
+
+
+
+    <div class="header-content container">
+        <div class="header-txt p1">
+            <br>
+            <br>
+            <h1>Querido Usuario</h1>
+            <p> 
+                En CodePyAI, hemos integrado una inteligencia artificial, basada en la API de ChatGPT, para mejorar la experiencia de aprendizaje en nuestra plataforma. Esta IA ofrece asistencia personalizada a los estudiantes de programación en Python, proporcionando respuestas inmediatas y adaptativas según las necesidades individuales de cada usuario.
+
+
+            </p>
+            <a href="https://claude.ai/" class="btn-1">Más Información</a>
+        </div>
+
+        <div class="header-img">
+            <img src="../static/imagenes/IA-1.png" width="300" style="margin-right:30px" alt="">
+            <img src="../static/imagenes/ChatGpt.png" width="300" alt="">
+        </div>
+    </div>
+        
+    </div>
+    <br><br>
+
+    <div class="cuadrado-2">
+
+        <h1>¿Como Funciona ChatGPT?</h1>
+
+        <div class="Info-1">
+
+            <p>ChatGPT es una serie de modelos de inteligencia artificial desarrollados por OpenAI, una organización centrada en la investigación avanzada y la seguridad en el desarrollo de IA. Estos modelos están específicamente diseñados para asistir en tareas de procesamiento de lenguaje natural. OpenAI se distingue por su enfoque en la ética y la seguridad, asegurando que ChatGPT pueda generar texto de manera efectiva y responsable.
+
+
+
+            </p>
+
+        </div>
+    </div>
+    <br>
+    <video controls  width="1000" height="500" style="margin-left:20% ; border:1px solid white;padding:20px;background-color:black">
+        <source src="../static/imagenes/ChatGptFun.mp4" type="video/mp4" >
+    </video>
+    
+    <div class="titulitos">
+        <h1>Principales Caracteristicas </h1>
+        <br>  <br>
+        <p>Recopilamos todo el trabajo realizado y decidimos realizar un avance del todo el desarrollo que hemos hecho , este fue el resultado</p>
+    </div>
+
+    <section class="general container" style="margin-left:-3%"> 
+
+        <div class="general-1">
+
+            <div class = "general-card">
+
+                <img class="h" src="../static/imagenes/Seguridad.png"   alt="" >
+
+
+                <h3>Seguridad y Ética</h3>
+
+                <p>
+                    ChatGPT prioriza la seguridad y la ética en su diseño y funcionamiento. OpenAI implementa medidas robustas para asegurar que los modelos de GPT sean seguros y estén alineados con principios éticos.
+
+
+
+                </p>
+            </div>
+
+            <div class = "general-card">
+
+                <img src="../static/imagenes/Adaptabilidad.png" alt="" width="300">
+            
+        
+                <h3>Adaptabilidad y Personalización  </h3>
+
+                <p>
+                    Los modelos de OpenAI son adaptables y personalizables para diferentes contextos y necesidades, permitiendo ajustar su comportamiento y respuestas según los requisitos específicos de la aplicación o industria.
+                </p>
+                
+            </div>
+
+            <div class = "general-card">
+
+                <img src="../static/imagenes/Herramienta.png" alt="">
+
+                <h3>Prueba y Error</h3>
+
+                <p>
+                    OpenAI ha optimizado los modelos de ChatGPT para ser eficientes en el uso de recursos computacionales, logrando tiempos de respuesta rápidos y minimizando el impacto ambiental en comparación con otros modelos de IA similares.
+
+
+
+
+
+
+                </p>
+            </div>
+        </div>
+    </section>
+  {% include 'Contenido/footer.html' %}
+
+
+
+</body>
+</html>

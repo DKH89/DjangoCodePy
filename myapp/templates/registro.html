@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePyAI</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/registro.css' %}">
+</head>
+<body>
+
+
+    {% if mensaje == "Ya existe un usuario con este correo electrónico" %}
+        <script>
+            alert("Ya existe un usuario con este correo electrónico");
+            window.location.href = "http://127.0.0.1:8000/Registro/"
+        </script>
+    {% endif %}
+
+
+    <div class="fondo-principal">
+        <video autoplay muted loop id="video-fondo2">
+            <source src="../static/imagenes/FondoPrincipal6.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="menu-registro">
+        <div class="menu">
+            <div class="contenido">
+                <h1>Crear una nueva cuenta</h1>
+                <p>Explore todo el contenido que CodePyAI tiene para ofrecer</p>
+            </div>
+        
+            <form id="registro-form" onsubmit="return validarFormulario()" method="POST">
+                <div class="encabezado">
+                    <div class="marco">
+                        <p>Nombre</p>
+                        <input type="text" id="nombre" placeholder="Por favor digite su nombre completo" required>
+                    </div>
+                    <br><br>
+                    <div class="marco">
+                        <p>Correo</p>
+                        <input type="email" id="correo" placeholder="Por favor digite su correo electronico" required>
+                    </div>
+    
+                    <br><br>
+                    <div class="marco2">
+                        <p>Contraseña</p>
+                        <input type="password" id="contrasena" placeholder="Por favor digite su contraseña" required>
+                    </div>
+                </div>
+                <div class="botones">
+                    <a onclick="return validarFormulario()" style="cursor:pointer">Crear una cuenta</a>
+                </div>
+            </form> 
+    
+            <div class="infoextra">
+                <p>¿Ya tiene una cuenta?</p>
+                <a href="http://127.0.0.1:8000/Login/">Loguearse</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var correo = document.getElementById('correo').value;
+            var contrasena = document.getElementById('contrasena').value;
+
+            if (nombre === '' || correo === '' || contrasena === '') {
+                alert('Por favor complete todos los campos.');
+                return false;
+            }
+
+            else{
+                window.location.href = "http://127.0.0.1:8000/RegistrarUsuario/" + nombre + "/" + correo + "/" + contrasena;
+            }
+        }
+    </script>
+</body>
+</html>
